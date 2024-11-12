@@ -1,0 +1,2736 @@
+
+a CFA Institute
+NSS ANNUAL 22% Research
+
+AS REVIEWS ‘A\® Foundation
+
+
+Named Endowments
+
+CFA Institute Research Foundation acknowledges with sincere gratitude the generous contributions of
+the Named Endowment participants listed below.
+
+Gifts of at least US$100,000 qualify donors for membership in the Named Endowment category, which
+recognizes in perpetuity the commitment toward unbiased, practitioner-oriented, relevant research
+that these firms and individuals have expressed through their generous support of the CFA Institute
+Research Foundation.
+
+Ameritech Miller Anderson & Sherrerd, LLP
+Anonymous John B. Neff, CFA
+
+Robert D. Arnott Nikko Securities Co., Ltd.
+Theodore R. Aronson, CFA Nippon Life Insurance Company of Japan
+Asahi Mutual Life Insurance Company Nomura Securities Co., Ltd.
+Batterymarch Financial Management Payden & Rygel
+
+Boston Company Provident National Bank
+
+Boston Partners Asset Management, L.P. Frank K. Reilly, CFA
+
+Gary P. Brinson, CFA Salomon Brothers
+
+Brinson Partners, Inc. Sassoon Holdings Pte. Ltd.
+
+Capital Group International, Inc. Scudder Stevens & Clark
+
+Concord Capital Management Security Analysts Association of Japan
+Dai-Ichi Life Insurance Company Shaw Data Securities, Inc.
+
+Daiwa Securities Sit Investment Associates, Inc.
+
+Mr. and Mrs. Jeffrey Diermeier Standish, Ayer & Wood, Inc.
+
+Gifford Fong Associates State Farm Insurance Company
+John A. Gunn, CFA. Sumitomo Life America, Inc.
+Investment Counsel Association of America, Inc. 'T. Rowe Price Associates, Inc.
+Jacobs Levy Equity Management Templeton Investment Counsel Inc.
+Jon L. Hagler Foundation Frank Trainer, CFA
+
+Long-Term Credit Bank of Japan, Ltd. Travelers Insurance Co.
+
+Lynch, Jones & Ryan, LLC USF&G Companies
+
+Meiji Mutual Life Insurance Company Yamaichi Securities Co., Ltd.
+
+Senior Research Fellows
+Financial Services Analyst Association
+
+For more on upcoming CFA Institute Research Foundation publications
+and webcasts, please visit www.cfainstitute.org/learning/foundation.
+
+
+
+TEN YEARS AFTER
+
+Reflections on the Global Financial Crisis
+
+Laurence B. Siegel and
+
+Luis Garcia-Feijoo, CFA, CIPM
+
+NJ CFA Institute
+Xe Research
+A\> Foundation
+
+SN
+
+
+Statement of Purpose
+
+CFA Institute Research Foundation is a not-for-
+profit organization established to promote the
+development and dissemination of relevant
+research for investment practitioners worldwide.
+
+Neither CFA Institute Research Foundation, CFA Institute, nor the publication's edi-
+torial staff is responsible for facts and opinions presented in this publication. This
+publication reflects the views of the author(s) and does not represent the official
+views of CFA Institute Research Foundation.
+
+CFA’, Chartered Financial Analyst*, and GIPS* are just a few of the trademarks owned by CFA
+Institute. To view a list of CFA Institute trademarks and the Guide for the Use of CFA Institute
+Marks, please visit our website at www.cfainstitute.org.
+
+© 2019 CFA Institute Research Foundation. All rights reserved.
+
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted,
+in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise,
+without the prior written permission of the copyright holder.
+
+This publication is designed to provide accurate and authoritative information in regard to
+the subject matter covered. It is sold with the understanding that the publisher is not engaged
+in rendering legal, accounting, or other professional service. If legal advice or other expert
+assistance is required, the services of a competent professional should be sought.
+
+Cover credit: Freddie Meagher / EyeEm / Getty Images
+ISBN 978-1-944960-73-5
+
+
+Laurence B. Siegel
+Gary P. Brinson Director of Research
+CFA Institute Research Foundation
+
+Luis Garcia-Feijoo, CFA, CIPM
+Associate Professor, Florida Atlantic
+University
+
+Associate Research Director,
+CFAInstitute Research Foundation
+
+TEN YEARS AFTER
+
+Reflections on the Global Financial Crisis
+
+
+
+
+CONTENTS
+
+Competing Narratives of the Crisis ....
+
+A Welcome and Introduction from Andrew W. Lo
+
+Deglobalization: The Rise of Disembedded Unilateralism
+Presented by Harold James
+Summarized by Laurence B. Siegel
+
+Financial Crises
+
+Presented by Gary Gorton
+
+Summarized by Laurence B. Siegel
+
+Recent Research on Banks’ Financial Reporting and Financial Stability.......
+Presented by Stephen G. Ryan
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Deregulating Wall Street ...............
+
+Presented by Matthew Richardson, Kermit L. Schoenholtz, and Lawrence J. White
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Mortgage-Default Research and the Recent Foreclosure Crisis
+Presented by Christopher L. Foote and Paul S. Willen
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+The Role of Housing and Mortgage Markets in the Financial Crisis
+Presented by Manuel Adelino, Antoinette Schoar, and Felipe Severino
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Measuring the Cost of Bailouts
+Presented by Deborah Lucas
+
+Summarized by Laurence B. Siegel
+
+16
+
+Intermediary Asset Pricing and the Financial Crisis
+
+Presented by Zhiguo He and Arvind Krishnamurthy
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+
+Liquidity, Leverage, and Regulation 10 Years after the Global Financial Crisis
+
+Presented by Tobias Adrian, John Kiff, and Hyun Song Shin
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Systemic Risk 10 Years Later
+Presented by Robert Engle
+Summarized by Laurence B. Siegel
+
+Regulatory Reform
+
+Presented by Andrew Metrick and June Rhee
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Central Banker Roundtabl
+
+Moderator: Stanley Fischer
+Panel: Ben Bernanke, Mervyn King, and Jean-Claude Trichet
+
+Summarized by Laurence B. Siegel
+
+About Annual Reviews
+
+ce Qualified ne CFA Institute This Publication qualifies ford CE credit under the guidelines
+" of the CFA Institute Continuing Education Program.
+
+
+COMPETING NARRATIVES OF THE CRISIS
+
+A Welcome and Introduction from Andrew W. Lo
+
+WELCOME
+
+It is a pleasure and an honor for me to welcome
+you to this companion volume to the 2008
+Financial Crisis: A Ten-Year Review, a confer-
+ence that took place on 8-9 November 2018 at
+the NYU Stern School of Business in New York
+City. All of the key stakeholders related to the
+2008 crisis were represented at this historic
+gathering. To quote Lin-Manuel Miranda, we
+had all the folks “who were in the room where
+it happened.” Alas, I was not even in the hall-
+way connected to the room outside the room
+where it happened, so I was thrilled to be able to
+hear from these individuals, and in these pages
+and at www.annualreviews.org/page/financial-
+conference-livestream, you can hear from them
+too.!
+
+ABOUT ANNUAL REVIEWS
+
+I want to begin with some background on what
+gave us the impetus to create this event and vol-
+ume and what it has to do with Annual Reviews.
+
+Annual Reviews is an organization that most
+of you, I suspect, have not heard of. It is a non-
+profit organization that was started in 1932,
+originally to provide a summary review of pub-
+lished research in biochemistry. So, the very
+first Annual Review was the Annual Review of
+Biochemistry, published once a year, as its title
+suggests. It consisted of review articles that were
+curated by the editors and the editorial board
+
+1Conference videos also available at www.cfainstitute.org/
+research/foundation/2008-financial-crisis.
+
+to summarize and synthesize all the things that
+were going on in that field at that time, a very
+fast-moving field that has only gotten faster, as
+you can imagine. Since then, Annual Reviews
+has grown to a family of 51 different titles
+across a wide range of disciplines, including the
+Annual Review of Financial Economics, which
+Bob Merton and I co-edit.
+
+The idea behind these reviews is crowdsourcing,
+but crowdsourcing of a very specific kind—
+bringing together a variety of research topics
+and distilling them into more digestible narra-
+tives. In particular, the focus is on topics that
+move very quickly, where it is just not possible
+for any one individual to keep up with all of the
+relevant research in that field.
+
+But it is not the intention of Annual Reviews to
+be a collection of book reports. The reviews do
+not just summarize research; they also provide
+interpretation. This is the difference between
+data and information. The co-editor of the
+Annual Review of Psychology, Susan Fiske, calls
+this approach “reviews with attitude” We want
+authors to use their own perspectives to shape
+the narratives that are summarized by their
+reviews.
+
+In this endeavor, the editorial board members
+play a critical role. Our amazing editorial board
+helps us to commission the reviews, identifying
+the key experts in the field to distill the many
+different research ideas in their areas of exper-
+tise and refereeing the contributions to ensure
+that they meet the highest standards of schol-
+arship as well as relevance. In addition to the
+
+CFA Institute Research Foundation | 1
+
+
+COMPETING NARRATIVES OF THE CRISIS
+
+editorial board members, we have the support
+of the entire Annual Reviews organization, an
+extremely effective group of professionals that
+allows us editors and authors to focus solely on
+ideas and exposition rather than production or
+administration. They are the heart and soul of
+Annual Reviews across all 51 disciplines.
+
+Volume 1 of the Annual Review of Financial
+Economics was published in 2009, a decade ago.
+It was a rather strange period in which to launch
+a review journal of finance; a few interesting
+things happened that year and the year before.
+Our inaugural volume was born in the context
+of crisis. At that time, we were concerned about
+what the public reception to an Annual Review
+of Financial Economics would be. Finance
+was getting dragged through the mud. But we
+decided that it was the perfect time to launch
+because what the crisis indicated was the need
+for more knowledge about finance, not less.
+
+A TWENTY-ONE-BOOK
+BOOK REVIEW
+
+Shortly after that first volume was published,
+I was contacted by the editor of the Journal of
+Economic Literature and invited to write a book
+review about the crisis, and I was allowed to pick
+my favorite book on the subject. | initially chose
+The Squam Lake Report, the product of a group of
+15 leading finance and macro economists whom
+I respected greatly, who sequestered themselves
+in a New Hampshire resort for several days to
+formulate their own narrative of the crisis.
+
+But I soon realized that this book did not cap-
+ture a number of aspects of the crisis, including
+the broader historical context. I then turned to
+Carmen Reinhart and Ken Rogoff’s wonderful
+book, This Time Is Different, an 800-year his-
+tory of financial crises. After reading that book,
+I realized that certain institutional features
+
+2 | CFA Institute Research Foundation
+
+about the financial system were missing, so I
+sought out other books about the crisis.
+
+After a couple of years of reading, the journal
+editor finally ran out of patience and said I had
+to submit my review at that time or the jour-
+nal would have to move on to another topic.
+I relented and submitted my book review:
+“Reading about the Financial Crisis: A Twenty-
+One-Book Review” After all that reading, I was
+unable to uncover the truth; instead, I came
+upon at least 21 different truths.
+
+SOME NARRATIVES
+REGARDING THE CRISIS
+
+Here are some narratives that I came across:
+
+e The crisis was all about subprime mort-
+gage lending. It was the subprime borrow-
+ers who really caused the crisis, and it was
+a combination of government policies—the
+Community Reinvestment Act and lower
+lending standards—that ultimately caused
+these subprime borrowers to start default-
+ing at massively higher rates than the rest of
+the population.
+
+e Bankers were at fault, too, because they did
+not have enough skin in the game. They
+were playing with house money, and they
+weren't as involved as they should be in the
+risk bearing.
+
+e Nobody saw the crisis coming, and if there
+were any issues regarding the theoreti-
+cal framework around the crisis, it was the
+efficient market hypothesis. People had an
+utter devotion to market efficiency, which is
+what caused the crisis.
+
+e And finally, changes in SEC regulation
+allowed huge increases in leverage among
+the investment banks.
+
+
+COMPETING NARRATIVES OF THE CRISIS
+
+Have you come across at least one of these nar-
+ratives? Do you believe at least one of these
+narratives? It turns out that every one of these
+narratives can be challenged by hard facts and
+data, as the articles in this volume will show.
+
+BUSTING A NARRATIVE
+
+To whet the appetite, let me describe one
+article's contributions as an example of what
+Annual Reviews is all about. Manuel Adelino,
+Antoinette Schoar, and Felipe Severino’s won-
+derful contribution exemplifies the key charac-
+teristics of an Annual Reviews article and why
+such reviews are important. The title of their
+review is “The Role of Housing and Mortgage
+Markets in the Financial Crisis,’ and the authors
+take on the critical question of what was, in fact,
+at the root of the crisis. Was it the subprime
+borrowers whom many pundits blame?
+
+The authors begin their review with a question
+about mortgage leverage. Did mortgage lever-
+age increase during the crisis period? Yes, it
+did—lots more mortgages, lots more leverage.
+To reach this conclusion, the authors distill a
+number of articles from various authors to con-
+struct their own particular narrative. How did
+lending standards change in the boom? Was it
+true that we lowered our lending standards dra-
+matically? You can learn what the authors dis-
+covered by reading their article, but let me just
+say that you will be quite surprised at what the
+evidence shows.
+
+What about homeownership expansion among
+the lower middle class? Did the Community
+Reinvestment Act really increase homeowner-
+ship widely in the post-2000 period? And was
+that the cause of the crisis?
+
+Many articles have been published on this one
+question, and Adelino, Schoar, and Severino
+provide a number of citations to that literature.
+
+Once more, they bust another myth. And if you
+are curious as to what the data show, they pro-
+vide a number of tables and figures to support
+their narratives, which can be easily accessed
+online through the Annual Reviews portal.”
+
+And finally, they take on the question of mort-
+gage defaults. Were the defaults concentrated
+in the lower middle class? Was it the subprime
+loans that were at fault? And again, the answer
+that they provide is absolutely shocking. This
+answer is not just a matter for academics to
+debate. It has great impact on policy. They show
+that the popular narrative—a narrative on which
+policy has been and is currently being based—is
+just not true.
+
+To support their narrative, the authors provide
+a list of 93 references to the literature. Unlike
+many other journals in which authors include
+a large number of references just to pander to
+referees, Annual Reviews articles contain only
+those references that are cited in the main
+body of the text. Moreover, in the online ver-
+sion, there are links to each reference that bring
+readers to the specific passages of the review in
+which those citations appear, greatly increasing
+the efficiency with which readers can link key
+concepts to their sources.
+
+THE DARWINIAN PROCESS
+OF SIFTING IDEAS
+
+The point of Annual Reviews is to bring together
+the very best thinking, but with an attitude, with
+specific narratives about how all these pieces fit
+together. Unlike my book review of 21 books
+about the crisis that came to no conclusion, the
+review articles contained in this volume all have
+conclusions. And plenty of attitude.
+
+2See wwwannualreviews.org/doi/full/10.1146/annurev-
+financial-110217-023036.
+
+CFA Institute Research Foundation | 3
+
+
+COMPETING NARRATIVES OF THE CRISIS
+
+Are they the correct conclusions? At this point,
+the jury is still out. But there is no doubt that,
+in Bob Merton’s and my opinion, these articles
+represent some of the best thinking we have
+today. But the thinking is constantly changing,
+which is one of the greatest features of Annual
+Reviews. It is a Darwinian process where only
+the very best and most compelling arguments
+survive.
+
+Does it mean the surviving arguments are
+always correct? Certainly not. But the interest-
+ing thing about academia—for those readers
+who are not part of our world—is that there are
+two ways that you can make a name for yourself
+in academia. You can come up with a brilliant
+theory, or you can destroy somebody else’s bril-
+liant theory. Both are perfectly acceptable paths
+for career advancement, and that Darwinian
+process is highlighted and facilitated by Annual
+Reviews.
+
+So, fast-forward to the 10th volume of the
+Annual Review of Financial Economics in 2018.
+We now have 10 articles about the financial cri-
+sis, each of them as thorough, detailed, and full
+
+4 | CFA Institute Research Foundation
+
+of attitude as Adelino, Schoar, and Severino’s.
+There have been a number of conferences mark-
+ing the 10th anniversary of the 2008 financial
+crisis, but the gathering on which this volume
+is based is unique. What we bring to the table,
+in addition to the people who were in the room
+where it happened, are the academics with the
+greatest insights into what happened, how it
+happened, why it happened—and, maybe, just
+possibly, what we might be able to do to make
+sure it doesn’t happen again.
+
+Only by understanding narrative in a materi-
+ally different and substantive way, by pushing
+aside the politics and polemics, and by focus-
+ing instead on the underlying drivers—crowd-
+sourced through this laborious process of sifting
+through thousands, if not tens of thousands, of
+articles—can we learn how to avoid crises in the
+future.
+
+Andrew Lo
+Cambridge, MA
+May 2019
+
+
+DEGLOBALIZATION: THE RISE OF
+DISEMBEDDED UNILATERALISM
+
+Presented by Harold James
+Summarized by Laurence B. Siegel
+
+Although globalization continues to domi-
+nate popular discussion, there is evidence of
+deglobalization—a decrease in international
+trade, cross-border investing, and so forth—
+in the wake of the 2008 global financial crisis.
+Moreover, deglobalization is much more preva-
+lent in political discourse, which has coalesced
+around nationalism and populism, than in
+actual economic behavior.
+
+Embedded globalism characterizes the set of
+institutions that arose from and reflect the lib-
+eral tendency of the long period from the end
+of World War II to the global financial cri-
+sis. It is marked by international agreements,
+such as Bretton Woods; government regula-
+tions, such as trade law; international public
+regulatory authorities, such as the International
+Organization of Securities Commissions; and
+private standard setters with global reach.
+
+The opposite of embedded globalism can be
+labeled disembedded unilateralism. It is char-
+acterized by opposition to free trade, calls for
+stricter limits on immigration, and an “America
+First” attitude (or its equivalent in other
+countries).
+
+The KOF index of global integration, con-
+structed by the Swiss Federal Institute of
+Technology in Zurich (ETH Zurich), rose for
+
+all five economic superpowers (United States,
+China, United Kingdom, Germany, and Japan)
+from 1970 to about 2000, then leveled off in the
+United States, United Kingdom, and Germany.
+Japan continued to integrate, and so did China,
+but less rapidly. The failure of integration to
+continue to increase does not, in itself, indicate
+a decline, but it could foreshadow one if current
+political trends continue.
+
+Empirical evidence of deglobalization includes a
+decline in cross-border bank claims, a low (but
+still positive) rate of import growth, an increase
+in harmful trade measures, and the slowing of
+international migration.
+
+The current political atmosphere seems to
+believe, wrongly, that economic life is zero-sum.
+Trade wars, proposed border walls, and Brexit
+all point in this direction. The dominant center-
+right and center-left parties that have ruled
+much of the world since the end of World War
+II have become either powerless (Hungary) or
+unpopular (France), or they have morphed into
+non-traditional parties (Trump Republicans
+in the United States, Corbyn Labourites in the
+United Kingdom).
+
+To quote Game of Thrones, “Winter is coming”
+Efforts to dismantle globalization, however, may
+paradoxically lead to its reform and renaissance.
+
+CFA Institute Research Foundation | 5
+
+
+FINANCIAL CRISES
+
+Presented by Gary Gorton
+Summarized by Laurence B. Siegel
+
+We are accustomed to thinking of banks as “tak-
+ing deposits” and then investing the money at a
+rate of return higher than the rate paid to the
+depositors, thus making a profit. But we can
+turn this around and look at short-term debt
+as the bank’s only product. Moreover, this debt
+has the special characteristic of being “informa-
+tion insensitive” —that is, no private information
+is needed to evaluate it. It’s widely understood
+to be riskless. When you worry whether a check
+you are cashing is “good,’ the concern is about
+whether the depositor has sufficient funds, not
+whether the bank does. It does. And, just in case
+it doesn’t, it is backed by the Federal Deposit
+Insurance Corporation.
+
+In other words, banks are the source of what we
+loosely call “money.” When owners of money
+(ie, depositors, or creditors of banks) grow
+concerned that they will be unable to access it,
+depositors engage in a bank run, transactions
+freeze up, and economic output can plunge. A
+financial crisis, then, is an information event
+in which holders of short-term debt observe a
+public signal and, in response, no longer want
+to lend to banks because they have reason to
+suspect the backing for the debt. In a financial
+crisis, the information-insensitive debt becomes
+information sensitive.
+
+For this reason, financial crises occur even
+in advanced economies and are caused by
+virtue of the fact that we have banks at all.
+(Almost by definition, banks engage in maturity
+
+6 | CFA Institute Research Foundation
+
+transformation—that is, they borrow for the
+short term and lend for the long term. This
+disparity is the underlying source of the risk
+of banks.) Thus, financial crises have occurred
+with some regularity throughout history, with
+1940-1975 being the longest exception.
+
+The 2008 global financial crisis can be analyzed
+in this context. The shadow banking system,
+in which repos (repurchase agreements) were
+money, had become important by 2007. An
+instrument can serve as money only if it is per-
+ceived as extremely secure, and repos backed
+by mortgages and other risky assets (that had
+been repackaged to appear safe) became sus-
+pect because of both the decline in real estate
+prices and increases in mortgage default rates.
+Thus, the repo market was at the center of the
+crisis, although one had to be on a trading floor
+to notice this.
+
+Financial crises tend to coincide with business-
+cycle peaks. Moreover, they have profound
+implications for macroeconomics. The crises
+of 2007-2009 showed that market economies
+remain susceptible to collapse or near-collapse
+in a financial crisis. The vulnerability of short-
+term debt, in all its forms, is an inherent feature
+of market economies because maturity mis-
+match is an inherent feature of banks, which
+are necessary for market economies to function.
+Thus, financial crises have occurred in market
+economies throughout history.
+
+
+RECENT RESEARCH ON BANKS'
+FINANCIAL REPORTING AND
+FINANCIAL STABILITY
+
+Presented by Stephen G. Ryan
+
+Summarized by Luis Garcia-Feijoo, CFA, CIPM
+
+Recent research indicates that banks’ financial
+reporting may affect financial stability through
+its impact on the following three channels: the
+likelihood of capital requirement violations,
+banks’ internal discipline over risk management
+and control systems, and the external discipline
+of the market and regulators over banks.
+
+Regarding capital requirement violations, recent
+work has examined US regulators’ removal
+of the accumulated other comprehensive
+income (AOCI) prudential filter from advanced
+approaches banks (i.e., very large banks). AOCI
+is a component of owners’ equity that includes
+cumulative gains and losses on securities clas-
+sified as available for sale (AFS), but it does not
+include cumulative gains and losses on securi-
+ties classified as held to maturity (HTM). With
+the AOCI filter in place, the definition of regu-
+latory capital excludes AOCI, and so banks
+have no incentive to classify securities as HTM
+rather than AFS. Basel III and US regulations,
+however, removed the AOCI filter beginning
+January 2014. Recent research has found that
+inclusion of unrealized gains and losses on AFS
+securities increases the volatility of regulatory
+capital and hence the likelihood of violations.
+Thus, removal of the filter has created an incen-
+tive for banks to classify securities as HTM
+rather than AFS.
+
+Additionally, firms may sell AFS securities with-
+out constraint, but they cannot generally sell
+or reclassify HTM securities without reclas-
+sifying the entire portfolio of HTM securities.
+This dynamic creates accounting frictions,
+because it limits banks’ ability to sell securities
+to raise funds. Moreover, banks cannot obtain
+hedge accounting for the interest rate risk of
+HTM securities, which creates another fric-
+tion. Research indicates these frictions have
+economic consequences. Specifically, banks
+have reduced the risk of both HTM and AFS
+securities, relied more on borrowing through
+repurchase agreements that potentially can be
+collateralized by HTM securities, reduced their
+loans overall, and increased the risk of their
+loans. These consequences are unlikely to pro-
+mote financial stability.
+
+Regarding the banks’ internal discipline and the
+market's external discipline, financial report-
+ing requirements may lead to better modeling
+of risk exposures and increased transparency,
+improving discipline. For example, recent work
+has examined property casualty (PC) insurers’
+fair value accounting and life insurers’ amortized
+cost accounting for investment securities that
+are non-investment grade but not yet in default.
+Researchers found that property and casualty
+insurers record timelier other-than-temporary
+
+CFA Institute Research Foundation | 7
+
+
+RECENT RESEARCH ON BANKS’ FINANCIAL REPORTING AND FINANCIAL STABILITY
+
+impairments of these securities than do life
+insurers. This finding and others in the litera-
+ture reflect the notion that fair value measure-
+ment leads insurers to develop risk models and
+control systems that enhance the companies’
+internal discipline, thereby promoting financial
+stability.
+
+Furthermore, researchers have found that
+banks affected by stronger loan-level disclosure
+
+8 | CFA Institute Research Foundation
+
+requirements increase banks’ external disci-
+pline. In turn, this increase leads to better-
+quality loans, increased credit supply, and
+timelier loss provisions.
+
+The recent research has used methods that
+address issues of causal inference (e.g., differ-
+ences in differences). Collectively, the research
+identifies important channels through which
+financial reporting affects financial stability.
+
+
+DEREGULATING WALL STREET
+
+Presented by Matthew Richardson, Kermit L. Schoenholtz,
+
+and Lawrence J. White
+
+Summarized by Luis Garcia-Feijéo, CFA, CIPM
+
+An individual firm’s systemic risk relates to
+how this firm contributes to aggregate capital
+and liquidity shortfalls in the financial system.
+A firm’s optimal leverage might aggregate to
+too much leverage for the financial sector, and
+this negative externality calls for prudential
+regulation.
+
+The regulator can pull the following three levers:
+capital (equity funding) requirements, liquidity
+requirements, and regulation of scope (restric-
+tions on activities or asset holdings).
+
+Although the 2010 Dodd-Frank Wall Street
+Reform and Consumer Protection Act (Dodd—
+Frank) uses all three levers, the Financial
+CHOICE Act, the recent sequence of US
+Treasury reports, and the Economic Growth,
+Regulatory Relief, and Consumer Protection
+(EGRRCP) Act all reduce the strength of finan-
+cial regulation, which is a concern.
+
+Dodd-Frank addressed systemic risk by increas-
+ing capital and liquidity requirements for banks;
+establishing the Financial Stability Oversight
+Council to focus on containing systemic risk,
+including the designation of systemically impor-
+tant financial institutions (SIFIs); introducing
+stress tests and resolution plans for SIFIs; and
+creating a resolution authority for failing SIFIs.
+
+The Dodd-Frank approach is more burden-
+some than necessary, imposing rules that tend
+to reduce competition and restrict innovation.
+
+As an alternative, the CHOICE Act trades off
+higher capital requirements against an exemp-
+tion from much of the Dodd—Frank regulation.
+If the goal is to reduce systemic risk, higher
+capital requirements can substitute for other
+regulatory interventions, such as regulation of
+scope. Capital regulation, however, requires the
+regulator to accurately measure the firm's lever-
+age and risk. Large, complex, and highly inter-
+connected intermediaries need to be subject
+to Dodd-Frank’s systemic regulations because
+accurately measuring these banks’ risk and
+leverage is difficult.
+
+One way to simultaneously capture the banking
+system’s risk and leverage is through stress tests.
+Rather than reducing the frequency or elimi-
+nating stress tests altogether, as CHOICE and
+EGRRCP do, stress tests should be expanded to
+cover a larger number of midsize banks.
+
+Importantly, Dodd-Frank specifies a risk-
+weighted capital requirement to control exces-
+sive risk taking. A capital requirement based
+solely on the leverage ratio motivates a bank to
+load up on the riskiest assets because these are
+treated the same as the safest assets. Using both
+a simple leverage and a risk-weighted capital
+ratio alleviates this problem.
+
+SIFIs need to be subject to enhanced regula-
+tion because they will be treated differently in
+a financial crisis. That is why it’s a bad idea to
+increase the standard for designating non-bank
+
+CFA Institute Research Foundation | 9
+
+
+DEREGULATING WALL STREET
+
+SIFls. It is also crucial that SIFIs supply resolu-
+tion plans. Unfortunately, EGRRCP dropped the
+living will requirement for banks with less than
+$250 billion in assets.
+
+Dodd-Frank also introduced regulations of
+scope. These regulations include the Consumer
+Financial Protection Bureau, which deals with
+predatory lending practices; new underwrit-
+ing standards; rules for clearing of derivatives
+transactions; and the Volcker Rule (VR). Rather
+than addressing risk directly, the VR essentially
+
+10 | CFA Institute Research Foundation
+
+restricts banks from proprietary trading and
+limits banks’ connections with hedge funds
+and private equity funds. It is difficult to defend
+the VR because its prohibitions are not closely
+aligned with risk. Another concern is cost. A
+cost-benefit analysis would be useful to com-
+pare the VR’s efficiency with that of other regu-
+latory tools. The goal should be to select those
+tools that achieve the biggest bang (systemic
+risk reduction) for the buck.
+
+
+MORTGAGE-DEFAULT RESEARCH AND
+THE RECENT FORECLOSURE CRISIS
+
+Presented by Christopher L. Foote and Paul S. Willen
+
+Summarized by Luis Garcia-Feijoo, CFA, CIPM
+
+The foreclosure crisis associated with the 2008
+financial crisis has led to a surge in academic
+research on mortgage default. Before the crisis,
+however, researchers had already made substan-
+tial progress to model default. A central concept
+was equity, because borrowers with negative
+equity are more likely to default. In the 1990s,
+option-pricing theory was used to show that,
+even with negative equity, rational borrow-
+ers may still make their payments while they
+wait for house prices to increase. An alterna-
+tive model, the double-trigger model of default,
+emphasized adverse life events, such as job loss,
+that could make continued payment difficult
+even in cases of small negative equity amounts.
+In light of the earlier research, scholars consid-
+ered the use of loan-level data and the options
+framework the standard for research on mort-
+gage default.
+
+Subsequent research, however, gave rise to new
+questions. For example, options-based models
+can explain why a borrower with negative equity
+of 10%-20% would continue to make mortgage
+payments, but they cannot explain why borrow-
+ers with large negative equity would choose not
+to default. In response, researchers improved
+empirical predictions by imposing transaction
+costs that would make default less appealing
+(e.g., moving costs, negative impact on credit
+score, psychological stigma). The financial
+crisis confirmed that transaction costs are an
+
+important feature of real-world data, making it
+particularly important to identify those costs.
+
+A second problem with options models is that
+individual characteristics matter for default.
+Borrowers typically attribute default to idio-
+syncratic shocks that mean loss of income (e.g.,
+death or illness in the family). Double-trigger
+models attribute defaults to a combination of
+negative equity and an adverse shock, but these
+approaches have limitations. Researchers are
+working on new methods that combine insights
+of the options framework with the added real-
+ism of liquidity constraints.
+
+To design the most effective response during a
+crisis, policy makers need to know more pre-
+cisely why defaults rise. Research indicates that
+the best way to reduce foreclosures is payment
+forbearance, in which the lender accepts lower
+payments for a limited period. Forbearance
+works well to prevent double-trigger defaults
+caused by liquidity problems because the mort-
+gage holder lends funds to make payments with
+little reduction in the present value of the pay-
+ment stream. Another loss-mitigation policy
+is principal reduction, but this policy does not
+work as well because of lenders’ inability to
+identify the likely default risks among the pool
+of negative equity borrowers. Empirical studies
+support the notion that payment reduction is an
+effective way to reduce default.
+
+CFA Institute Research Foundation | 11
+
+
+MORTGAGE-DEFAULT RESEARCH AND THE RECENT FORECLOSURE CRISIS
+
+Policy makers’ new rules following the crisis are
+intended to prevent future problems. The rules
+are based on the view that the crisis was caused
+by lenders who originated mortgages that were
+unaffordable either because of large interest-
+rate resets from low initial teasers or because of
+low initial debt-to-income (DTI) ratios. Resets
+were not a serious problem, but the use of DTI
+presents its own set of complications. A better
+approach would be to base lending decisions on
+variables correlated with the future variance of
+income, such as credit scores.
+
+12 | CFA Institute Research Foundation
+
+Overall, the double-trigger model implies that
+the affordability of mortgages (and not only
+negative equity) is critical for borrowers con-
+sidering default. But the importance of unfore-
+castable income shocks means defaults for any
+individual borrower are hard to predict and
+hence hard to prevent with origination-income
+restrictions. Policy responses focused on relax-
+ing liquidity constraints will likely be more effec-
+tive than those based on principal reductions.
+
+
+THE ROLE OF HOUSING AND MORTGAGE
+MARKETS IN THE FINANCIAL CRISIS
+
+Presented by Manuel Adelino, Antoinette Schoar, and Felipe Severino
+
+Summarized by Luis Garcia-Feijoo, CFA, CIPM
+
+It is well known that household debt increased
+in the period leading up to the 2008 crisis. Less
+understood is that credit expansion, as mea-
+sured by increasing DTI ratios, affected people
+at every income level. This expansion was also
+closely tied to house price appreciation, particu-
+larly via equity extraction refinancing. Evidence
+suggests that lenders did not appropriately take
+into account the risk of house prices declining,
+but evidence does not support the contention
+that lenders loosened lending standards, as
+measured by average combined loan-to-value
+(LTV) ratios (the amount of mortgage lever-
+age, including second liens and equity loans). In
+addition, no evidence indicates that the boom
+increased the entry of marginal borrowers into
+the housing market. The evidence points to a
+financial market that underestimated the risk of
+defaults and did not anticipate the housing bust.
+
+Evidence shows that the increase in house prices
+and collateral values, exacerbated by speculative
+behavior, may have led to increases in mortgage
+
+debt of homeowners who were trading up their
+homes. Furthermore, research has found that
+defaults increased the most for prime borrowers
+and that their defaults were closely tied to house
+price appreciation. Additionally, it appears the
+fraction of loans that could have been affected
+by deterioration of origination practices was
+too small to have played a significant role in the
+crisis. Overall, the findings are consistent with
+overly optimistic homeowners who took out
+mortgages against inflated house values and
+defaulted when house prices dropped.
+
+Properly diagnosing the financial crisis’s origins
+is necessary to prevent similar future events. The
+authors’ findings indicate the need for macro-
+prudential regulation that prevents a systemic
+buildup of leverage and protects against sys-
+temic shocks to asset values. Research suggests
+that appropriate responses include higher or
+time-varying capital requirements and counter-
+cyclical LTV requirements.
+
+CFA Institute Research Foundation | 13
+
+
+MEASURING THE COST OF BAILOUTS
+
+Presented by Deborah Lucas
+Summarized by Laurence B. Siegel
+
+We review what economists know about the
+bailouts surrounding the 2007-2009 global
+financial crisis, inventorying the costs and ben-
+eficiaries to provide useful and correct data to a
+conversation that has consisted mostly of accu-
+sations and conjecture.
+
+The total “direct” cost of the bailouts was about
+$500 billion, or 3.9% of the 2009 United States
+GDP. This finding is in opposition to both the
+accusation that the bailouts cost trillions and
+the claim that a profit was made by the gov-
+ernment (so that the cost was negative). Direct
+costs are the government subsidies and guaran-
+tees specifically related to the bailout, and they
+do not include opportunity costs or the cost of
+any moral hazard created.
+
+We begin by defining a bailout. A bailout is a
+value transfer from a government to a financially
+distressed private entity (or, possibly, a govern-
+ment program) for which a fair value insurance
+premium was not previously collected and is
+not expected to be collected after the fact. If the
+government received securities in exchange for
+the bailout, the cost of the bailout is only the
+excess of the value transfer over the fair market
+value of the securities received at the time.
+
+Identifying the beneficiaries of a bailout is also
+a key ingredient of this study. Beneficiaries can
+include debt holders, stockholders, employees
+
+14 | CFA Institute Research Foundation
+
+and executives, customers, and parties insured
+by the bailed-out organization.
+
+Ex post analysis of a bailout’s cost is flawed. For
+example, the claim that the bailouts produced a
+“profit” of $97 billion mixes information from
+different periods incorrectly. It is just as bad to
+claim that all government funds put at risk dur-
+ing the bailout effort were spent or lost; they
+were not, and a large news organization's bail-
+out cost estimate of $16.8 trillion can be safely
+ignored. Only fair value estimates based on
+information available at the time of a given bail-
+out are economically acceptable.
+
+The cost of mortgage guarantees, such as those
+provided by the Federal Housing Administration
+(FHA), is hard to assess because they are essen-
+tially insurance premiums for events that may
+or may not happen—so one cannot easily tell
+whether the premium being charged is fair. The
+fact that deep losses occurred does not mean
+the premium was too low. For many years, pre-
+miums were collected and losses did not occur.
+It is generally agreed, however, that FHA guar-
+antees are subsidized (underpriced), at a cost to
+taxpayers and providing a benefit to borrowers
+and builders.
+
+A similar analysis can be applied to Troubled
+Asset Relief Program (TARP) loans, student
+loan guarantees, Federal Deposit Insurance
+
+
+MEASURING THE COST OF BAILOUTS
+
+Corporation coverage, and other government
+guarantees of private financial arrangements.
+To sum up, the fair value analysis described here
+results in cost estimates of $311 billion to bail
+out Fannie Mae and Freddie Mac, $60 billion for
+
+the FHA, and $90 billion for the TARP program,
+as well as a number of miscellaneous items for a
+total cost of $498 billion, of which private inves-
+tors received $418 billion. A “ballpark estimate”
+of the cost of all other guarantees is $60 billion.
+
+CFA Institute Research Foundation | 15
+
+
+INTERMEDIARY ASSET PRICING
+AND THE FINANCIAL CRISIS
+
+Presented by Zhiguo He and Arvind Krishnamurthy
+
+Summarized by Luis Garcia-Feijéo, CFA, CIPM
+
+The article provides an introduction to asset
+pricing based on frictions in financial interme-
+diaries, broadly defined to include commercial
+banks, investment banks, and hedge funds. The
+2008 financial crisis called into question the
+classical asset pricing assumptions that inter-
+mediaries are a veil and that asset prices reflect
+household preferences.
+
+Theoretically, an intermediary asset pricing
+model considers a household sector and an
+intermediary sector. Households delegate
+investment in some intermediated assets to
+intermediaries, and contracting frictions (ie.,
+moral hazard, or shirking) imply such delega-
+tion is not a veil. As a result, prices for the inter-
+mediated assets will depend on intermediary
+frictions.
+
+An important assumption is that there is lim-
+ited participation by households in some assets,
+and hence there is delegation. This can be moti-
+vated by lack of knowledge to invest in com-
+plex assets, such as asset-backed securities, or
+by infrequent assessment of consumption and
+investment decisions by households (i.e., annual
+rebalancing), such as in the equity markets.
+Hence, intermediary asset pricing studies low-
+frequency price movements and can be distin-
+guished from market microstructure research.
+
+16 | CFA Institute Research Foundation
+
+Contracting frictions separate it from models
+with heterogeneous agents.
+
+Intermediary asset pricing implies that shocks to
+intermediation should affect asset prices, espe-
+cially during a financial crisis. Intermediation
+shocks can be capital reductions caused by
+losses or investor withdrawals or by increases
+in asset complexity, which worsen contract-
+ing frictions. Additionally, capital shocks have
+a non-linear impact on asset prices, and the
+impact depends on whether (regulatory) capi-
+tal constraints bind (i.e., intermediaries cannot
+raise equity capital from households).
+
+Theoretically, frictions will affect the prices of
+assets that are more intermediated, which has
+implications that can be tested empirically.
+Specifically, intermediation disruptions should
+be associated with movement in intermedi-
+ated asset prices. Furthermore, a number of
+researchers have constructed an intermediary
+stochastic discount factor (SDF) to show how
+this factor can price asset returns. A (sufficient)
+test of intermediary asset pricing requires show-
+ing that the intermediary factor can explain
+variation in asset returns, whereas the house-
+hold factor cannot.
+
+Empirically, evidence supports the intermedi-
+ary asset pricing from research done using data
+
+
+INTERMEDIARY ASSET PRICING AND THE FINANCIAL CRISIS
+
+from the financial crisis. Such evidence is based
+on covered interest rate parity deviations and
+also comes from insurance markets, especially
+related to the pricing of long-term life insur-
+ance during the crisis. From a different perspec-
+tive, empirical research using an intermediary
+factor (SDF) also is based, for example, on the
+pricing of prepayment risk in mortgage-backed
+
+securities or broker/dealer capital ratios. This
+research estimates an intermediary price of risk
+that can be used to improve theoretical models.
+Further research is needed, however, to better
+understand which types of intermediaries and
+financial frictions are most relevant to under-
+standing asset prices.
+
+CFA Institute Research Foundation | 17
+
+
+LIQUIDITY, LEVERAGE, AND REGULATION
+10 YEARS AFTER THE GLOBAL
+
+FINANCIAL CRISIS
+
+Presented by Tobias Adrian, John Kiff, and Hyun Song Shin
+
+Summarized by Luis Garcia-Feijoo, CFA, CIPM
+
+Bank leverage has declined around the world
+since the 2008-2009 global financial crisis. It
+would be simplistic, however, to attribute dele-
+veraging to increased banking regulation fol-
+lowing the crisis.
+
+Because banks are financial intermediaries,
+bank capital plays a key role for overall lending.
+Banks that are well capitalized can lend more of
+their own funds and can also borrow more and
+on better terms. For better-capitalized banks,
+the lower funding cost translates into greater
+intermediation activity.
+
+Currently, for typical levels of bank leverage,
+evidence suggests that banks could retain more
+of their profits to build capital, thereby reducing
+their cost of equity funding.
+
+Additionally, bank leverage is influenced by the
+combination of perceived creditworthiness of
+the intermediary as a borrower and how tight
+overall credit conditions are in the financial sys-
+tem. Bank leverage exhibits cyclical variations.
+If funding liquidity is ample, even thinly capi-
+talized banks can borrow on easy terms. When
+conditions tighten, banks are likely to delever-
+age and shrink lending, with pernicious conse-
+quences for the real economy.
+
+Evidence indicates that, rather than having been
+caused by increased regulation, the leverage
+
+18 | CFA Institute Research Foundation
+
+collapse following the crisis reflected a combi-
+nation of reduced expected returns, conserva-
+tive risk management, the diminished role of
+securitization, and the growth of non-bank
+lending and market making.
+
+Regulatory reforms following the crisis can be
+grouped around four objectives:
+
+1. Improve financial system resilience in case
+of stress, including the following areas: capi-
+tal ratios relative to risk-weighted assets;
+leverage ratios; liquidity and funding ratios;
+stress tests; central clearing counterpar-
+ties for standardized derivatives contracts;
+and reforms of the shadow banking sec-
+tor, such as those affecting money market
+funds, securitization, or interconnected-
+ness between the banking and non-banking
+sectors
+
+2. Contain risk buildup in the financial system,
+including the following areas: countercycli-
+cal buffers requiring banks to hold addi-
+tional capital in times of excessive credit
+growth and risk; development of new tools
+to assess systemic risk, such as conditional
+VaR (value at risk); and stronger constraints
+on interconnectedness between SIBs (sys-
+tematically important banks)
+
+
+LIQUIDITY, LEVERAGE, AND REGULATION 10 YEARS AFTER THE GLOBAL FINANCIAL CRISIS
+
+3. Strengthen policy and supervision of the
+financial system, including the following: a
+focus on understanding the financial sector
+as a system and new institutional macropru-
+dential frameworks to strengthen oversight
+of systemic risk
+
+4. Limit moral hazard and lower failure costs,
+including the following areas: strong crisis
+management arrangements for recovery or
+orderly resolution of failing firms without
+
+spillovers for financial stability and capital
+surcharges for SIBs
+
+Regulatory reform should be evaluated in terms
+of overall benefits to the financial system and
+wider economy rather than only with respect
+to the narrow interests of financial market
+participants. Evidence shows that regulations
+have made the financial system safer, but addi-
+tional research is needed on their unintended
+consequences.
+
+CFA Institute Research Foundation | 19
+
+
+SYSTEMIC RISK 10 YEARS LATER
+
+Presented by Robert Engle
+Summarized by Laurence B. Siegel
+
+The 2007-2009 global financial crisis was related
+to excessive credit growth. Credit growth is
+excessive if the financial sector has insufficient
+capital to cover market value losses in a down-
+turn. At the end of a long economic expansion,
+risky credit is issued increasingly. If the holders
+of these credits are leveraged, their equity turns
+negative and a credit boom goes bust.
+
+To understand financial crises, one can study
+the risks posed by undercapitalization of finan-
+cial firms. As the business cycle peaks, such
+firms are progressively more exposed to the risk
+of holding deteriorating credits with declin-
+ing collateral quality while also being lever-
+aged. The measure called SRISK (for systematic
+risk), developed by the Volatility Laboratory at
+New York University, captures this phenom-
+enon. SRISK uses global equity prices (the price
+of an exchange-traded fund based on the MSCI
+ACW/I) as a proxy for market stress.
+
+This method is used to forecast the betas of
+financial firms. Interestingly, the firm betas
+reflect the characteristics of each firm. In the
+Great Recession, the betas of Bank of America
+and Citigroup rose to 3 and 4, respectively,
+whereas the betas of both Goldman Sachs and
+BNP Paribas did not move much at all. The lat-
+ter two companies were not involved in the sub-
+prime mortgage business.
+
+20 | CFA Institute Research Foundation
+
+The risks of undercapitalized firms then are
+aggregated to the country level, with no netting
+of fully capitalized firms, because capital from
+these prudent firms is not immediately available
+to recapitalize the weak firms. The country risk
+estimates are aggregated to form a world risk
+estimate, which is as high now as it was in 2008.
+We estimate that about $4 trillion of capital
+would be needed to recapitalize all the financial
+firms in the world. European and Asian banks
+currently pose more risk than US banks.
+
+To ascertain the probability of a financial crisis,
+one must also measure risk capacity—that is, the
+financial system’s ability to withstand risk posed
+by undercapitalized institutions. Interestingly,
+despite currently large amounts of risk in some
+such institutions, the probability of a US finan-
+cial crisis is as low as at any time in this century,
+around 2% or 3%, compared with between 85%
+and 95% (depending on the model) at the time
+of the global financial crisis. Risk capacity in a
+country is related to the level of GDP, the mar-
+ket value of financial firms’ equity, and the total
+assets of financial firms. For these reasons, sys-
+temic risk has been reduced dramatically from
+the high levels experienced during the financial
+crisis.
+
+
+REGULATORY REFORM
+
+Presented by Andrew Metrick and June Rhee
+
+Summarized by Luis Garcia-Feijéo, CFA, CIPM
+
+Following the global financial crisis (GFC),
+major regulatory reforms have ensued around
+the prevention and management of financial
+crises (i.e., systemic risk). In 2010, the new
+Basel III framework addressed three main
+issues: capital inadequacy, insufficient liquidity,
+and financial system interconnectedness. In the
+United States, the 2010 Dodd—Frank Wall Street
+Reform and Consumer Protection Act included
+systemic risk elements, such as the estab-
+lishment of the Financial Stability Oversight
+Council. The European Union introduced the
+European System of Financial Supervision in
+2011 and the EU banking union in 2012. In the
+United Kingdom, the 2013 Financial Services
+Act reformed the regulatory structure.
+
+Post-GFC reforms can be organized into three
+groups: preventative powers, emergency pow-
+ers, and restructuring powers. The main effect
+of reforms has been to shift power from the sec-
+ond group into the first and third groups.
+
+Three important prevention topics are liquidity
+regulation, central clearing, and shadow bank-
+ing. Liquidity rules are paradoxical because
+they target an essential maturity transformation
+function of banks. Further research is needed to
+understand the design and impact of these new
+rules. Central counterparties (CCPs) poten-
+tially can remedy the problems of opacity and
+
+bankruptcy inefficiency associated with swaps’
+OTC activity. Because the industry has no prior
+experience with a shift of this magnitude from
+OTC activity into CCPs, many questions remain.
+
+A major concern with liquidity regulation, cen-
+tral clearing, and other prevention topics is that
+they involve a migration to shadow banking
+(money market mutual funds, securitization,
+asset-backed commercial papers, and repos). No
+effective regulation manages this migration, and
+further research is needed.
+
+Two major types of emergency measures in
+which legal authority changed the most in post-
+GFC reforms include the lender of last resort
+(LOLR) and broad-based guarantees. Research
+is needed on key aspects of LOLR measures,
+such as who can borrow during a panic, under
+what collateral rules can they borrow, and at
+what rates. Any appropriate answer must bal-
+ance the potential short-term stigma of borrow-
+ing against long-term moral hazard problems.
+Regarding guarantees, research on the evalu-
+ation of alternative guarantee plans and on
+changes to guarantee authority is needed.
+
+Rules around the resolution and restructuring
+process changed significantly after the GFC. For
+empirical researchers, the challenge is that these
+rules are complex and untested.
+
+CFA Institute Research Foundation | 21
+
+
+CENTRAL BANKER ROUNDTABLE
+
+Moderator: Stanley Fischer
+
+Panel: Ben Bernanke, Mervyn King, and Jean-Claude Trichet
+
+Summarized by Laurence B. Siegel?
+
+A remarkable group of central bankers met
+at New York University on 9 November 2018
+to discuss the state of affairs 10 years after
+the great financial meltdown in the autumn
+of 2008. In the humble position of moderator
+was Stanley Fischer, the former vice-chair of
+the Federal Reserve, who would have been the
+featured speaker in practically any other gather-
+ing on Earth. The principal speakers were Ben
+Bernanke, who needs no introduction (so he
+will get none), former Bank of England gover-
+nor Lord Mervyn King, and former European
+Central Bank president Jean-Claude Trichet.
+
+WHAT DID YOU LEARN,
+AND WHAT WOULD YOU
+DO DIFFERENTLY?
+
+Fischer began by asking the bankers what they
+learned from their experience as the head of one
+of the great central banks and what they would
+do differently if they faced a similar challenge
+today.
+
+3The author thanks David L. Stanwick, who provided a
+massive amount of editorial assistance. Without Dave, this
+piece could not have been written.
+
+22 | CFA Institute Research Foundation
+
+Ben Bernanke's Response
+
+Bernanke, the first to respond, made three main
+points:
+
+1. The thing that he and other central bank-
+ers did not see coming was the extent of
+“run vulnerability” throughout the modern
+financial system. (An institution is vulner-
+able to “runs” when depositors, creditors, or
+other liability holders think they have to be
+the first to make a claim on an insufficient
+asset pool or they will not get their share.)
+
+2. “Without the pervasive panic, we would
+not have had nearly so bad an economic
+outcome as we did.” In other words, panic
+during the crisis was one cause of the depth
+of the economic decline and the failure to
+recover more quickly.
+
+3. “Where I remain concerned,’ Bernanke said,
+“js in terms of the firefighting tools.”
+
+Let us examine each of these points in more
+detail.
+
+Run vulnerability
+
+Central bankers’ lack of ability to forecast the
+crisis, Bernanke said, can be attributed to several
+factors. First, the bankers “saw housing prices
+very high relative to rents” but “had hoped that
+would correct in a more gradual way.’ Second,
+risk premiums were low, meaning that the
+
+
+CENTRAL BANKER ROUNDTABLE
+
+reward for taking various kinds of risks—not
+only equity risk, but the many fixed-income
+risks that permeate the financial system—was
+unusually small. Alan Greenspan had previously
+talked about this dynamic in one of his valedic-
+tory speeches, referring to costs that can arise
+from risk premiums being low.
+
+Furthermore, Bernanke said, central bankers
+did not have a full picture of how the modern
+financial system, based on the existence of com-
+plex securities (some of them held using large
+amounts of leverage), created new run vulner-
+abilities. “We saw the run . . . on commercial
+paper, a run on money market funds, collateral
+runs, repo [i.e., repurchase agreement] runs,
+so [the phenomenon of runs] was really quite
+generalized. The conceptual problem was that,
+in almost all these cases, the short-term liabil-
+ity that was being run was collateralized” It is
+unusual, and frankly somewhat illogical, for
+liabilities that are properly collateralized to be
+subject to runs. Of course, this logic presumes
+that the collateral is good and is being accu-
+rately valued.
+
+“Take repo, for example,’ Bernanke said. “It’s
+collateralized and backed by generally liquid
+securities, so [we thought it unlikely] that we
+would see runs in those markets. Nevertheless
+it turned out that, as the crisis worsened and as
+lenders became worried about the liquidities
+of secondary markets and their own ability to
+dispose of financial assets in a timely and effi-
+cient way, the easiest thing for them to do was
+to run”—that is, to sell them at any price.
+
+The panic and the depth
+of the downturn
+
+Regarding Bernanke's claim that the pervasive-
+ness of the panic exacerbated the downturn, he
+
+said, “I'll give you two pieces of evidence. The
+first one has to do with the forecasts being made
+by standard macro models before the crisis.
+Even in scenarios that assume declines in house
+prices that were as large or larger than actually
+happened, the macro models [didn’t forecast] an
+unemployment rate above 7%.
+
+“Indicators of the panic,’ Bernanke continued,
+“such as the spread between the LIBOR rate and
+the short-term interest rate or OIS [overnight
+indexed swap] rate, were much better forecast-
+ers of the real economy than were . . . house
+prices. Because the panic was so central in the
+United States, I think that we have to evaluate
+the regulatory changes that have been under-
+taken since then, at least in part in terms of how
+they guard us against a future panic”
+
+Bernanke ended this section of his comments
+ona hopeful note. He said, “I think that in terms
+of reducing the risk of a panic occurring and
+reducing the vulnerability of the system, we've
+made a lot of progress.” Bernanke described
+work by Andrew Metrick and Robert Engle
+showing that some of the risks have decreased.
+The shadow banking sector is smaller, the level
+of reliance on short-term funding is down, and
+there is more capital and less leverage at work.
+
+Firefighting tools
+
+In the United States, Bernanke indicated, “the
+lending tools—the lender-of-last-resort author-
+ities at the Fed—were constrained after the cri-
+sis, and I fear that they are not fully adequate”
+These tools continue to be constrained, he said.
+But he is encouraged by some of the develop-
+ments “in terms of the resolution authority, the
+liquidation authority, which I think will be very
+helpful”
+
+CFA Institute Research Foundation | 23
+
+
+CENTRAL BANKER ROUNDTABLE
+
+Bernanke summary and
+discussion questions
+
+Summing up, Bernanke indicated that cen-
+tral bankers were “late in understanding that
+this [panic] was going to happen.’ It took them
+a while, in 2007, to see its extent. Once they
+understood what it was, he said, “we reacted
+aggressively with lending and ultimately with
+capital and guarantees to help stabilize the sys-
+tem.” He concluded, “I think we were successful
+in stabilizing the system”
+
+Bernanke then tossed out questions for dis-
+cussion. Recognizing that what he and his col-
+leagues did was unpopular, he asked:
+
+e¢ Was that because of inadequate communi-
+cation on their part?
+
+¢ Or, was it because our political system is
+not set up in a way to appropriately address
+major financial crises and ways of resolving
+them?
+
+“Would it have been better,’ he wondered, “if we
+had more pieces in place before the crisis?” He
+added, “That’s what I actually think .. . that if we
+had had something more like a Federal Deposit
+Insurance Corporation for the shadow banking
+sector, we would have been much better placed
+both economically and politically.’
+
+Finally, he indicated that “if there could have
+been differences in terms of response, it would
+have been in the communication and the poli-
+tics” They would have made these aspects “a
+much bigger part” of their response.
+
+Mervyn King's Response
+
+King began by commenting, “I share Ben’s view
+that the essence of this was a run on short-term
+debt liabilities. The impact on the real economy
+derived from the existence of the run, and [it
+
+24 | CFA Institute Research Foundation
+
+was] not just within [one] country. There was
+a global downturn, and it reflected a change in
+narrative about how much confidence one could
+place in the United States and therefore, by
+extension, other financial systems.”
+
+The question King said he would like to add to
+Bernanke’s main points is, “Why was there a
+run in the first place?”
+
+King, like Bernanke, made three main points.
+
+Undercapitalization of the
+banking system
+
+First, King said, the banking system was under-
+capitalized. “At the bank we felt pretty early on,
+by December 2007 or January 2008, that the
+loss of confidence [that] markets showed in the
+banking system, as reflected in the waxing and
+waning of the LIBOR/OIS spread, was never
+going to be dealt with satisfactorily without a
+recapitalization of the banking system.
+
+“The difficulty with that, of course,’ he contin-
+ued, “is that there is no objective measure of
+the amount of capital that you need in order to
+maintain confidence . . . so that the rest of the
+system [will] be willing to lend to banks. The
+lender-of-last-resort framework that we thought
+we inherited from the past to extend emergency
+liquidity was inadequate to cope with the mod-
+ern banking system.”
+
+King reminded us that “we all know Bagehot’s
+dictum: ‘Lend freely, at a penalty rate against
+good collateral’ All three aspects of that failed in
+2008. ‘Lend freely’ failed because of stigma, and
+I think we were not conscious of how important
+that was.’ He reflected, “I think the 1914 epi-
+sode, the major financial crisis at the beginning
+of the First World War, was . . . overshadowed
+by the actual [war] itself, but nevertheless it was
+a big financial crisis in which, in the run-up to
+
+
+CENTRAL BANKER ROUNDTABLE
+
+it, stigma had played a role, and that was rather
+forgotten.’ By “stigma,” King was likely referring
+to the political undesirability of transferring
+public funds to institutions that were perceived
+to have mismanaged their affairs.
+
+According to King, Bagehot's penalty rate “failed
+because it was time inconsistent. It’s fine to say
+in advance you're going to impose a penalty rate,
+[but] when you actually get to the crisis and
+banks need the money, there’s not much incen-
+tive to impose the penalty rate.”
+
+‘The third part of the Bagehot rule, “against good
+collateral,’ failed because “there wasn’t any good
+collateral.” Ouch.
+
+King then commented about the politics of how
+to deal with these problems. When it came to
+recapitalizing the banks, politicians created
+the biggest obstacle. “Everything that was done
+where politicians had knowledge of it;’ King
+said, “somehow managed to be leaked to the
+press, which made actually conducting many of
+these operations extraordinarily difficult”
+
+Jean-Claude Trichet's Response
+
+Trichet’s initial response was brief. “The
+[European Central Bank] didn’t have a lack of
+tools,’ he said. “I have the memory,’ he contin-
+ued, “of a meeting we had confidentially with
+the banks at the . .. beginning of 2007 where .. .
+even one of the bankers [Charles Prince, CEO
+of Citigroup] was saying, ‘I know that what we
+do is bizarre, but when the music plays, I cannot
+help but stand up and dance?
+
+“With the growing interconnectedness of the
+markets with IT and globalization,’ Trichet said,
+“the herd was forming in half a day. The same
+type of run, which has happened before, is hap-
+pening much faster.’ He summed up by saying
+that in future challenges, “we have to respond
+
+extremely quickly and boldly” Trichet cautioned
+that there will be no time to ask politicians to
+make decisions, because they will be incapable
+of deciding.
+
+CONTAGION
+
+Stanley Fischer then noted, “One of the most
+interesting aspects of this crisis in historical
+terms was the unbelievable speed of transmis-
+sion to Asia. Within two months, I think exports
+[by] some of the leading exporters were down
+about 50%.”
+
+Mervyn King's Response
+
+King was the first to respond. He said, “I was
+very struck, in the crisis, that our central bank
+colleagues from not just Asia but also Latin
+America would ring up and basically say, ‘We
+haven't had a banking crisis in our country, but
+nevertheless we're seeing a dramatic drop off the
+cliff in domestic spending—why is this happen-
+ing?” King thought there was a major change
+for the worse in sentiment among all investors
+and decision makers, but “once you go just six
+to nine months down the road after that, [peo-
+ple] in most of the emerging market countries
+realized they hadn't had a banking crisis. They
+weren't so badly affected” Emerging market
+countries, King concluded, were the ones that
+began to lead the world out of recession.
+
+Jean-Claude Trichet's Response
+
+Trichet found it “humiliating” that the advanced
+economies were “the epicenter of the . . . cri-
+sis.” The fact that any large amount of invest-
+ment in the rich countries was “interrupted
+because of the uncertainty of the situation,’
+combined with the fact that everybody wanted
+to maximize liquidity and minimize risk in a
+
+CFA Institute Research Foundation | 25
+
+
+CENTRAL BANKER ROUNDTABLE
+
+hurry, created a situation in which “the baton
+passed from G-7 to the G—-20” This is a striking
+change. In addition to the G-7 group of tradi-
+tionally developed countries, the G-20 includes
+the BRICs (Brazil, Russia, India, and China) as
+well as Argentina, Indonesia, Mexico, Turkey,
+Saudi Arabia, South Africa, and South Korea.*
+
+Ben Bernanke's Response
+
+It would have been surprising if Bernanke's
+response was brief. It wasn’t particularly.
+
+“You hear this naive comment sometimes,’ he
+said, about “how many firms in a given quarter
+are actually seeking new credit . . . and [that]
+those are the ones which were affected by this
+shock to credit supply. I think that’s exactly the
+wrong way to think about it”
+
+Bernanke continued, “I think what happened,
+as Mervyn and Jean-Claude were both indicat-
+ing, is that there was this massive surge of fear,
+liquidity preference, precautionary savings, a
+desire to husband liquidity—for example, firms
+that didn’t have an immediate need for credit
+drew down their credit lines as far as they could
+just to have as much cash as possible. This cre-
+ated a tremendous impact on the real economy
+as, for example, firms stopped hiring because
+they wanted to conserve the costs of employ-
+ment. ... [T]his had a global effect.”
+
+He then added that trade was “killed” by the
+crisis.
+
+The Federal Reserve, Bernanke said, was “disad-
+vantaged,’ echoing a theme he developed earlier.
+“The Federal Reserve has two limited authori-
+ties in terms of what it can buy, who it can lend
+to—we were severely disadvantaged by the fact
+The European Union is separately a member of the G-20,
+and Australia (which is not in the G—7 but is a historically
+
+developed country) is also a member, rounding out the list
+of 20.
+
+26 | CFA Institute Research Foundation
+
+that we needed to invoke emergency powers to
+lend to anybody that wasn’t a commercial bank,
+whereas the [European Central Bank], you
+know, could lend to any financial institution”
+
+Bernanke emphasized that the Fed’s role was
+“in one way very asymmetric, [in] that we were
+the producers of dollars. In a period of intense
+crisis, [the US dollar] is the key currency. One
+of the first things that we did in 2007 was to set
+up, ultimately, 14 swap lines with foreign central
+banks, essentially making sure that the foreign
+central banks . . . had access to dollars, which
+they could then on-lend to their domestic finan-
+cial institutions. We felt that was essential to
+stabilize dollar funding markets and therefore
+important for the US economy as well as for the
+global economy?’
+
+Bernanke said that, as he recalled, the Fed ended
+up doing swaps with four emerging markets:
+Brazil, Mexico, Singapore, and South Korea. The
+choice of markets was based on criteria such as
+the extent and depth of the market, as well as
+their economic importance to the United States.
+
+Mervyn King's Additional
+
+Comments
+
+King then added, “The one thing that became
+very apparent in the crisis was that the major
+central banks who work together closely on a
+range of things and meet each other have real
+trust in each other, which does not depend on
+formal agreements.”
+
+For example, on 11 September 2001, Alan
+Greenspan was stuck in Europe, so Roger
+Ferguson, who was second in command [at
+the Fed], was in charge. Banks deal with their
+opposite number, so Ferguson dealt with King,
+who was then second in command at the Bank
+of England, instead of then-governor Eddie
+George. “The only basis on which that could
+
+
+CENTRAL BANKER ROUNDTABLE
+
+have been done and worked,” said Bernanke,
+“was personal trust.”
+
+CHANGES IN THE REGULATORY
+SYSTEM
+
+Stanley Fischer then asked: What changes would
+you like to see in the new regulatory system that
+emerges from the crisis?
+
+Jean-Claude Trichet's Response
+
+Trichet began on an optimistic note: “What we
+did for the banks in general has been quite well
+done” What he still finds dangerous is that herd
+behavior can create runs in public markets just
+as it can for banks.
+
+“Public and private leverage,’ Trichet pointed
+out, “has continued to augment after the cri-
+sis as it did before the crisis. If you [calculate]
+public debt outstanding plus private debt out-
+standing as a percentage of global GDP, you
+see that this indicator had [grown by] some-
+thing like 25% of global GDP over the period
+from, say, 2007-2008 to 2016, according to the
+International Monetary Fund. So this . . . signals
+something, not necessarily in any particular
+country but at the global level, that we [have to
+be aware of]?
+
+Mervyn King's Response
+
+King initially addressed the question of how the
+Bank of England functioned as a lender of last
+resort: “There are no limits on the identity of
+potential recipients of Bank of England support.
+We can lend to whomever we want either in
+the financial sector or outside it. The only thing
+is that we now have an agreed Memorandum
+of Understanding between the bank and the
+Treasury on behalf of the government, which I
+signed with George Osborne. It sets down the
+
+fact that the Treasury has to give approval to
+any specific lender-of-last-resort operation. I
+think that’s sensible because in the end, it’s the
+Treasury that is going to underwrite the fiscal
+risk” of such lending.
+
+King then answered Fischer's question: “You
+have to have a framework in which the political
+side . . . gives agreement. You can do it in gen-
+eral terms ex ante or . . . by being involved in
+the particular operations, but in the end, [poli-
+ticians] have to give indemnity to the central
+bank for carrying out an operation”
+
+Understanding the maturity
+mismatch of bank balance
+sheets
+
+King continued, “I think that the system does
+need to be redesigned, somewhat along the lines
+of my proposal” in which “maturity transfor-
+mation, whether in the formal banking system
+or outside it, is an important part of the credit
+process.”
+
+Maturity transformation is the process by which
+banks and other organizations borrow short
+term and lend long term. This practice is nor-
+mal, and a source of profit for those institutions,
+but it is laden with interest rate risk, especially
+if the process is leveraged—that is, if the insti-
+tution does not have enough capital to protect
+it from fluctuations in asset and liability val-
+ues. King appears to mean that the amount of
+interest rate risk taken by a financial institution
+should be crucial in determining the institu-
+tion’s credit quality.
+
+“If there’s too much maturity transformation,
+he said, “then it can cause the risk of a crisis and,
+just as Ben [Bernanke] said, it’s the panic that
+can have enormously costly economic repercus-
+sions. So you want a positive tax on the degree
+
+CFA Institute Research Foundation | 27
+
+
+CENTRAL BANKER ROUNDTABLE
+
+of maturity transformation. That means looking
+at both the asset and the liability side of the bal-
+ance sheet together. One of the weaknesses of
+[the] Basel [regulatory framework for banks],
+all the way through, has been that initially it
+focused only on the asset side”
+
+Summary of Mervyn King's
+statement
+
+To sum up, King said, we need to focus on the
+aspects of the financial system that can gener-
+ate a run. “We didn’t have enough capital in
+the banking system; we didn’t have a resolution
+process that would deal with bigger banks; and,
+most important, we didn’t have the political
+buy-in to say that here’s a crisis we have thought
+through in advance, we know how we might
+deal with it, and we're broadly comfortable with
+the framework that’s being used”
+
+Ben Bernanke's Response
+
+Bernanke commented, “One theme I'd like
+people to take away is that the differences in
+the powers of different central banks are really
+substantial. So Mervyn could lend to anybody,
+presumably, including his gardener.
+
+“It’s a concern to me,’ he continued, “that we
+don’t have in the United States a lender-of-
+last-resort authority that’s adequate—although,
+interestingly, there is one part of our system
+that actually works very well. That is the way
+the FDIC deals with failing commercial banks.
+It's ironic that the United States is the country
+where the [central bank] has limited lending
+authority but also the biggest nonbank credit
+markets.”
+
+Jean-Claude Trichet's Response
+
+To Fischer’s question, Trichet responded,
+“What worries me most is that macroeconomic
+
+28 | CFA Institute Research Foundation
+
+policies are not optimal . . . the world over—
+certainly not optimal in the advanced econo-
+mies, but also in the emerging economies.’ He
+said that is likely to be the reason we have the
+augmentation of leverage that has already been
+mentioned and that is now understood as one of
+the major vulnerabilities of the global economy.
+“I think we have to do something,” Trichet said,
+“and, in my opinion, it is quite urgent because
+we have to change the balance between equity
+and debt in practically all economies, emerging
+or advanced.”
+
+MORAL HAZARD
+
+Stanley Fischer then asked, “How large should
+the role of moral hazard be in designing
+facilities?”
+
+Ben Bernanke's Response
+
+Bernanke replied, “The fear of moral hazard has
+led Congress to say, ‘We're not going to make
+any preparation for this contingency because
+we don’t want to give the [impression] that we
+would in fact intervene: But, of course, if things
+get bad enough, some future government will
+intervene.”
+
+So, Bernanke said, we would be better off “set-
+ting up an ex ante structure [that] lays out the
+rules and eliminates some of the uncertainty
+and delay and political costs.” And, second, we
+must make it clear that “if you're an individual
+firm that’s making bad decisions, you're not
+going to be protected except in the event of a
+systemic crisis.” Third, he said it was “a myth
+that American banks were ‘bailed out’ and
+held harmless during the crisis. It’s true that
+the creditors were protected, but the equity
+holders, the management and so on, were very
+badly hurt, even when their banks received
+capital.”
+
+
+CENTRAL BANKER ROUNDTABLE
+
+So, Bernanke’s recommendation is to design a
+structure, in advance, in which the conditions
+for an intervention are made clear. Defining “the
+rights of individual stakeholders ... , as we do
+now with deposit insurance, would ex ante limit
+some of the moral hazard.
+
+“I think it’s a solvable problem,’ he concluded.
+
+Mervyn King's Response
+to Ben Bernanke
+
+Reacting to Bernanke's comments, King said
+that he “never found ambiguity very construc-
+tive.’ It is much better, he said, to “set down a
+clear ex ante framework within which opera-
+tions can be conducted and the rules that will
+govern it. You then get political buy-in to [the
+framework]. The politicians don’t have to say we
+agree with every individual action that’s taken,
+and they can hold people accountable ex post?
+
+King concluded, “You’ve got to have a consid-
+eration of moral hazard when you design the
+scheme, but merely mentioning the word does
+not mean that you can’t do something at all” In
+other words, he seemed to agree with Bernanke
+that moral hazard is a design problem to be
+solved, not an insurmountable obstacle to good
+policy.
+
+Jean-Claude Trichet's Response
+
+Trichet said that “the euro area is transforming
+itself under the pressure of the crisis. We had
+two new treaties. We had the banking union,
+which is of course a major structural reform that
+was totally unexpected before the crisis but that
+was overdue in light of it”
+
+He also commented that, to stave off future
+crises, it is necessary to “try to detach the cred-
+itworthiness of the bank from the creditworthi-
+ness of the nation.”
+
+Finally, he said that creating a special entity that
+is not the central bank for guaranteeing depos-
+its is essential and that the FDIC in the United
+States is the correct model.
+
+Audience Question to Bernanke
+on Moral Hazard
+
+An audience member asked, “Ben, do you still
+hold the view that, if the crisis had a single les-
+son, it is that ‘too big to fail’ must be ended?
+How much progress do you think we’ve made
+in terms of attacking that problem, and why is
+there such a dearth of interest in the topic from
+academia?”
+
+Ben Bernanke's Response
+
+“You have to make it plausible,’ Bernanke replied,
+“that you could have a [financial institution] fail-
+ure that wouldn't bring down the system, right?
+That’s the essence of the orderly liquidation
+authority, Title 2 of Dodd—Frank, the ‘living wills’
+I've had a number of briefings from the FDIC and
+the Fed on progress in that area, and I’m a little
+more optimistic about it than some.
+
+“It’s certainly true,’ Bernanke continued, “that
+[this idea] hasn’t been tested, and it would not
+be easy, particularly for a large multinational
+firm with many overseers. But I do feel that
+what's there is more credible and that the living
+wills have . . . put us in a better position relative
+to where we were with the ad hoc weekend res-
+cues of the crisis period”
+
+Stanley Fischer then said that the process of
+closing a bank is not something he would want
+to get into.
+
+Bernanke replied, “No; that’s what I was saying.
+That is why the moral hazard concern is some-
+what overstated. But, also at the same time, if
+you really can’t allow a large firm to fail, then
+
+CFA Institute Research Foundation | 29
+
+
+CENTRAL BANKER ROUNDTABLE
+
+you're in a situation where, in a crisis, every
+large firm is a potential time bomb. You know
+that extraordinary, politically unpopular, and
+economically undesirable steps have to be taken
+to protect them. Free laissez-faire is the right
+thing, [so failure must be an acceptable out-
+come for a business], but I think it needs to be
+a guided and organized failure. I think it can be
+done in a way that reduces the implications for
+the broader system.”
+
+ADDITIONAL ISSUES
+
+Central Bank Independence
+
+An audience member asked to what extent
+central bank independence can actually be reit-
+erated or preserved in an era of more interven-
+tionist politics.
+
+Jean-Claude Trichet replied that “independence
+must function in both directions.”
+
+Ben Bernanke said, “It’s important to define
+what independence means. It doesn’t mean, for
+example, that the central bank can coordinate or
+cooperate with the fiscal authorities as we [did]
+during the crisis, which was appropriate. It also
+doesn’t mean that the central bank gets to set its
+own objectives. Congress tells the Fed to [seek]
+price stability and maximum employment and,
+in general, the government will give the pow-
+ers and the framework [for the Fed to do that],
+but it seems instrumentally valuable for central
+banks to have what's called instrument indepen-
+dence ability:
+
+Instrument independence is the authority to
+decide what monetary instruments to use. It
+differs from goal independence, which is the
+authority to decide what to use the monetary
+
+30 | CFA Institute Research Foundation
+
+instruments for. In the United States, the Fed
+does not have goal independence.
+
+Risks Caused by Pension
+Guarantees
+
+Zvi Bodie, an audience member and Boston
+University professor of finance, commented,
+“I’m even willing to go so far as to say what the
+first warning is going to be, and it will be the
+bankruptcy of the Pension Benefit Guaranty
+Corporation”
+
+King responded, “I share your concern that
+there could be an economic crisis resulting
+across the world [because of] inadequate pen-
+sion provision and [the fact that] we've made
+promises to people [that] the potential suppli-
+ers of pensions may not be able to meet. I think
+this is somewhat different in character from the
+financial system crises that we've been discuss-
+ing—the runs—the solution to which has to
+come from central banks.
+
+“But,” King continued, “I think the question
+of pensions is a much wider issue. It’s a very
+important one, I agree—but . . . it inevitably
+involves difficult political judgments and deci-
+sions, and that goes beyond the remit of cen-
+tral bank governors, independent though we
+may have been.”
+
+RECAPS AND CLOSING NOTE
+
+Ben Bernanke did not recapitulate his comments.
+
+Recap from Mervyn King
+King closed by saying, “I think we are in a bet-
+
+ter position. Banks do have more loss-absorbing
+capacity. A byproduct of quantitative easing is
+
+
+CENTRAL BANKER ROUNDTABLE
+
+that the system as a whole has a lot more liquid-
+ity than before.
+
+“Resolution, King continued, “has been
+improved everywhere; that’s a great help. My big
+worry would be that the resolution framework,
+which might work smoothly on paper, might
+not survive the interest of the White House or
+Number 10 Downing Street or someone in the
+European Commission. [In other words,] politi-
+cians would try to intervene because they would
+say, ‘None of us really knows the possible con-
+tagion effect of allowing a large institution to go
+through this resolution process?
+
+“If we have a proper ex ante framework for
+central banks dealing with that [concern],” he
+said, “then I think the risk of it is much dimin-
+ished. What I take away is the complementar-
+ity between the efforts that have been made
+to increase the amount of capital in banks to
+improve their liquidity position (though, as
+I said, more needs to be done on that front),
+on the resolution framework, and on interna-
+tional cooperation between central banks and
+regulators.”
+
+King concluded, “The trouble is that much of
+this [improvement] will fade as people age and
+younger people who don’t remember the crisis
+come in to run institutions, but that’s why put-
+ting things down and having an ex ante frame-
+work is important.”
+
+Recap from Jean-Claude Trichet
+
+Trichet remarked, “I said already that it was
+quite worrying when I look at some indicators
+of fragility at the global level and at the level
+of many countries. One major difficulty I see
+for some central banks, and maybe all central
+banks of the advanced economies, is that in case
+we have a recession, or in case we have to cope
+with [some other] kind of dramatic event, we
+have to be fully aware that we will have to utilize
+ammunitions and that they are very meager at
+the moment.”
+
+Closing Remark by Stanley
+
+Fischer
+
+Stanley Fischer remarked that “the cost of this
+very difficult crisis was much less than [that of]
+the Great Depression. [The] unemployment rate
+reached 10% [in the crisis of 2008]; it reached
+25% in the Great Depression. That's enough to
+tell you this was a very successful operation”
+
+This appraisal is valid only if the degree of finan-
+cial distress that produced the Great Depression
+was actually replicated in 2007-2009. It is hard
+to see how one should assess that claim. Fischer
+and the other central bankers seem to hold that
+view, however, and perhaps we should take seri-
+ously the idea that a second Great Depression
+was avoided through the actions discussed in
+this Roundtable.
+
+CFA Institute Research Foundation | 31
+
+
+ABOUT ANNUAL REVIEWS
+
+Founded in 1932, Annual Reviews publishes
+highly cited review journals across 50 schol-
+arly disciplines. Each review article contains
+an average of 150 citations to the key primary
+research contributions in a field to serve as a
+high-quality filter. The journals hold a unique
+place in the scholarly communication ecosys-
+tem by enabling the transfer of expert knowl-
+edge to other scholars and to society as a whole.
+They save researchers, practitioners, and policy
+makers time by expertly synthesizing the vast
+amount of primary research literature and iden-
+tifying the principal contributions to the field.
+
+The Annual Review of Financial Economics,
+published since 2009, provides comprehen-
+sive, forward-looking, and critical reviews of
+the most significant theoretical, empirical, and
+experimental developments in financial eco-
+nomics. Co-edited by Robert Merton (MIT) and
+Andrew Lo (MIT), this journal covers topics
+relevant to capital markets, corporate finance,
+financial institutions, market microstructure,
+and behavioral and experimental finance. Visit
+the publication online at www.annualreviews.
+org/journal/financial.
+
+Readers depend on review articles to
+
+¢ capture current understanding of a topic,
+including what is well supported and what
+is controversial,
+
+e set the work in historical context,
+
+e highlight the major questions that remain
+to be addressed and the likely course of
+research in upcoming years, and
+
+¢ outline the practical applications and gen-
+eral significance of research to society.
+
+32 | CFA Institute Research Foundation
+
+To create our impactful content, each journal
+relies on an expert editorial committee to facili-
+tate annual meetings at which members discuss
+trends in each field and select relevant topics
+for in-depth review. Authoritative authors then
+are invited to submit review articles, which
+often are described as “required reading” for the
+research community.
+
+Access Annual Reviews articles online by visit-
+ing www.annualreviews.org.
+
+ABOUT THE 2008 FINANCIAL
+CRISIS: A TEN-YEAR REVIEW
+CONFERENCE
+
+Held in November 2018, this conference marked
+the 10-year anniversary of the global financial
+crisis by exploring the origins of and response
+to the crisis and the lessons learned from it.
+Speakers presented new research and shared
+their experiences of playing a key role or having
+an excellent vantage point during this vital time
+in recent global economic history.
+
+Participants included the following:
+
+Ben Bernanke
+Myron Scholes
+Robert Merton
+Tim Geithner
+Robert Engle
+Mervyn King
+
+Douglas Diamond
+
+
+ABOUT ANNUAL REVIEWS
+
+Jean-Claude Trichet
+Gary Gorton
+Deborah Lucas
+
+Conference hosts included the following:
+
+Annual Review of Financial Economics
+www.annualreviews.org/journal/financial
+
+MIT Golub Center for Finance and Policy
+(GCFP)
+https://gcfp.mit.edu
+
+NYU Leonard N. Stern School of Business
+www-stern.nyu.edu/
+
+Conference Livestream Sponsor:
+
+CFA Institute Research Foundation
+www.cfainstitute.org/en/research/foundation
+
+CFA Institute Research Foundation | 33
+
+
+
+
+Chair
+‘Ted Aronson, CFA
+AJO
+
+Jeffery V. Bailey, CFA*
+Tonka Bay, MN
+
+Bill Fung, PhD
+Aventura, FL
+
+Diane Garnick
+Greenwich, CT
+
+JT Grier, CFA*
+Virginia Retirement System
+
+*Emeritus
+
+CFA Institute
+Research Foundation
+Board of Trustees
+2018-2019
+Joanne Hill
+CBOE Vest Financial
+
+George R. Hoguet, CFA
+Chesham Investments, LLC
+
+Robert Jenkins, FSIP
+London Business School
+
+Joachim Klement, CFA
+Fidante Partners
+
+Vikram Kuriyan, PhD, CFA
+GWA and Indian School of
+Business
+
+Officers and Directors
+
+Aaron Low, CFA
+
+LUMIQ
+
+Diane Nordin, CFA
+
+Concord, MA
+
+Mauro Miranda, CFA
+
+CFA Society Brazil
+
+Sophie Palmer, CFA
+
+Jarislowsky Fraser
+
+Paul Smith, CFA
+
+CFA Institute
+
+Executive Director
+
+Bud Haslett, CFA
+CFA Institute
+
+Gary P, Brinson Director of Research
+
+Laurence B. Siegel
+Blue Moon Communications
+
+Associate Research Director
+
+Luis Garcia-Feij6o, CFA, CIPM
+Coral Gables, Florida
+
+Secretary
+
+Jessica Critzer
+CFA Institute
+
+Treasurer
+
+Kim Maynard
+CFA Institute
+
+Research Foundation Review Board
+
+William J. Bernstein
+Efficient Frontier Advisors
+
+Elroy Dimson
+London Business School
+
+Stephen Figlewski
+New York University
+
+William N. Goetzmann
+Yale School of Management
+
+Elizabeth R. Hilpman
+Barlow Partners, Inc.
+
+Paul D. Kaplan, CFA
+Morningstar, Inc.
+
+Robert E. Kiernan IIT
+Advanced Portfolio Management
+
+Andrew W. Lo
+Massachusetts Institute of
+‘Technology
+
+Alan Marcus
+Boston College
+
+Paul O'Connell
+FDO Partners
+
+Krishna Ramaswamy
+
+University of Pennsylvania
+
+Andrew Rudd
+
+Advisor Software, Inc.
+
+Stephen Sexauer
+
+Allianz Global Investors Solutions
+
+Lee R. Thomas
+
+Pacific Investment Management
+Company
+
+
+Ny CFA Institute ISBN 9
+mh Research
+AS Foundation
+
+Available online at it g ons: 6073
+
+
+— Nyy, CFA Institut
+n= ANNUAL Ny Research i
+
+P=REVIEWS AS foundation
+
+NJ CFA Institute
+7 @ Research
+IX Foundation
+
+Competing Narratives of the Crisis.
+
+A Welcome and Introduction from Andrew W. Lo
+
+Deglobalization: The Rise of Disembedded Unilateralism
+Presented by Harold James
+
+Summarized by Laurence B. Siegel
+
+Financial Crises..............00+
+
+Presented by Gary Gorton
+
+Summarized by Laurence B. Siegel
+
+Recent Research on Banks’ Financial Reporting and Financial Stability....
+Presented by Stephen G. Ryan
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Deregulating Wall Street
+
+Presented by Matthew Richardson, Kermit L. Schoenholtz, and Lawrence J. White
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Mortgage-Default Research and the Recent Foreclosure Crisis
+Presented by Christopher L. Foote and Paul S. Willen
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+The Role of Housing and Mortgage Markets in the Financial Crisis ......
+
+Presented by Manuel Adelino, Antoinette Schoar, and Felipe Severino
+
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Measuring the Cost of Bailouts
+Presented by Deborah Lucas
+
+Summarized by Laurence B. Siegel
+
+Intermediary Asset Pricing and the Financial Crisis.............0.:000000+
+
+Presented by Zhiguo He and Arvind Krishnamurthy
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Liquidity, Leverage, and Regulation 10 Years after the Global Financial Crisis ...............
+
+Presented by Tobias Adrian, John Kiff, and Hyun Song Shin
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Systemic Risk 10 Years Later...
+Presented by Robert Engle
+Summarized by Laurence B. Siegel
+
+Regulatory Reform.
+
+Presented by Andrew Metrick and June Rhee
+Summarized by Luis Garcia-Feij6o, CFA, CIPM
+
+Central Banker Roundtable
+
+Moderator: Stanley Fischer
+Panel: Ben Bernanke, Mervyn King, and Jean-Claude Trichet
+
+Summarized by Laurence B. Siegel
+
+About Annual Reviews..
+
+ite
+titu
+Ins’
+
+A
+
+Ny CF
+
+ied Te
+
+al
+
+CE Qui
+
+
+
+NJ CFA Institute
+Tr y Research
+Is Foundation
+
+SN
+
+SBN 978-1-944960-73-5
+
+8
+
+1944960735" >
