@@ -48,24 +48,36 @@ index = get_index(pdf_index_name)
 #         return "final_answer"
 
 def router(state: dict):
-    # Define a max depth to prevent infinite cycles
-    max_depth = 5  # Adjust based on the acceptable graph depth
+    max_depth = 25  # Adjust as needed to match the recursion limit
     depth = state.get("depth", 0)
 
-    # Increase depth counter
+    # Increment depth
     state["depth"] = depth + 1
+    print(f"Router Depth: {depth}, Intermediate steps: {state.get('intermediate_steps', [])}")
 
-    # If we've reached the max depth, route to final answer
-    if state["depth"] >= max_depth:
+    # Stop if max depth is reached
+    if depth >= max_depth:
+        print("Max depth reached. Routing to 'final_answer'")
         return "final_answer"
 
-    # Otherwise, continue with last tool in intermediate steps
+    # Prevent revisiting the same tool repeatedly
+    if "visited_tools" not in state:
+        state["visited_tools"] = set()
+
+    # Get the last tool invoked
     if isinstance(state["intermediate_steps"], list) and state["intermediate_steps"]:
-        return state["intermediate_steps"][-1].tool
-    else:
-        # Handle bad format by going to final answer
-        print("Router invalid format")
-        return "final_answer"
+        last_tool = state["intermediate_steps"][-1].tool
+
+        if last_tool in state["visited_tools"]:
+            print(f"Tool '{last_tool}' already visited. Routing to 'final_answer'")
+            return "final_answer"
+        
+        state["visited_tools"].add(last_tool)
+        return last_tool
+
+    # Fallback to final answer in case of invalid format
+    print("Router encountered invalid format. Routing to 'final_answer'")
+    return "final_answer"
 
 
 from langgraph.graph import StateGraph, END
