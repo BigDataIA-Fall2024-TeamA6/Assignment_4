@@ -49,6 +49,8 @@ Assignment_4/
   │   └── docker-compose.yaml   # Airflow deployment configuration
   ├── architecture_diagram/
   │   ├── arch_diagram.py
+  ├── streamlit/
+  │   ├── chat.py               #main app
   │   ├── research_agent.py      # Research agent logic with Pinecone indexing and tool routing
   │   ├── state.py               # Defines the state management for the agent
   │   ├── tools.py               # Implements various tools for task execution
