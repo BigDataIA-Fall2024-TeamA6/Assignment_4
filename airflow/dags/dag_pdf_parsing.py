@@ -1,310 +1,246 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.models import Variable
-from airflow.utils.dates import days_ago
+from datetime import datetime, timedelta
 from pathlib import Path
-import logging
 import os
+import logging
+import boto3
+from sentence_transformers import SentenceTransformer
+from pinecone import Pinecone, ServerlessSpec
+from docling.datamodel.base_models import InputFormat
+from docling.datamodel.pipeline_options import PdfPipelineOptions
+from docling.document_converter import DocumentConverter, PdfFormatOption
+import pytesseract
 from dotenv import load_dotenv
-import datetime
 import time
-import gc
-import pandas as pd 
 
+# Set logging
 logging.basicConfig(level=logging.INFO)
 _log = logging.getLogger(__name__)
 
 # Load environment variables
-load_dotenv()
+load_dotenv('/opt/airflow/Assignment_4/.env')
 
-S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
-S3_INPUT_PREFIX = os.getenv("S3_INPUT_PREFIX", "pdf_files/")
-S3_OUTPUT_PREFIX = os.getenv("S3_OUTPUT_PREFIX", "processed_files/")
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT")
+# Pinecone and S3 Configuration
+PINECONE_API_KEY = os.getenv('PINECONE_API_KEY')
+PINECONE_ENV = os.getenv('PINECONE_ENVIRONMENT')
+S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
+S3_INPUT_PREFIX = os.getenv('S3_INPUT_PREFIX', "pdf_files/")
+S3_OUTPUT_PREFIX = os.getenv('S3_OUTPUT_PREFIX', "processed_files/")
 
-BATCH_SIZE = int(Variable.get("pdf_batch_size", default_var=5))
-CHUNK_SIZE = int(Variable.get("pdf_chunk_size", default_var=1000))
-IMAGE_RESOLUTION_SCALE = float(Variable.get("image_resolution_scale", default_var=1.5))
-MAX_RETRIES = 3
-RETRY_DELAY = 2
+# Initialize Pinecone and S3
+pc = Pinecone(api_key=PINECONE_API_KEY, environment=PINECONE_ENV)
+s3_client = boto3.client("s3")
 
-BASE_TMP_DIR = Path("/tmp")
-PDF_INPUT_DIR = BASE_TMP_DIR / "pdf_files"
-PROCESSED_OUTPUT_DIR = BASE_TMP_DIR / "processed_files"
-PARQUET_OUTPUT_DIR = BASE_TMP_DIR / "output_parquet"
+# Temporary Directories
+PDF_INPUT_DIR = Path("/tmp/pdf_files")
+TXT_OUTPUT_DIR = Path("/tmp/txt_files")
+PDF_INPUT_DIR.mkdir(parents=True, exist_ok=True)
+TXT_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-for dir_path in [PDF_INPUT_DIR, PROCESSED_OUTPUT_DIR, PARQUET_OUTPUT_DIR]:
-    dir_path.mkdir(parents=True, exist_ok=True)
+model = SentenceTransformer("all-mpnet-base-v2")
 
-def cleanup_old_files(directory: Path, max_age_hours: int = 1) -> None:
-    """Remove files older than specified hours."""
-    import time  # Lazy import
-    current_time = time.time()
-    for file_path in directory.glob("*"):
-        if file_path.is_file():
-            file_age = current_time - file_path.stat().st_mtime
-            if file_age > max_age_hours * 3600:
-                try:
-                    file_path.unlink()
-                    _log.info(f"Removed old file: {file_path}")
-                except Exception as e:
-                    _log.warning(f"Failed to remove {file_path}: {e}")
-
-def retry_with_backoff(func, max_retries: int = MAX_RETRIES, base_delay: int = RETRY_DELAY):
-    """Execute a function with exponential backoff retry."""
-    import time  # Lazy import
-    for attempt in range(max_retries):
-        try:
-            return func()
-        except Exception as e:
-            if attempt == max_retries - 1:
-                raise
-            delay = base_delay * (2 ** attempt)
-            _log.warning(f"Attempt {attempt + 1} failed: {e}. Retrying in {delay} seconds...")
-            time.sleep(delay)
-
-def check_memory_usage() -> bool:
-    """Check if system has enough memory available."""
-    import psutil  # Lazy import
-    memory = psutil.virtual_memory()
-    return memory.percent < 80
-
-def extract_text_from_page(page) -> str:
-    """
-    Extract text content from a PDF page with OCR fallback.
-    
-    Args:
-        page: A page object from the document converter
-        
-    Returns:
-        str: Extracted text content from the page
-    """
-    import pytesseract  # Lazy import
-    import gc  # Lazy import
-    try:
-        text_content = page.text.strip() if hasattr(page, 'text') else ""
-        if not text_content and hasattr(page, 'image'):
-            custom_config = r'--oem 3 --psm 6'
-            text_content = pytesseract.image_to_string(
-                page.image,
-                config=custom_config,
-                lang='eng'
-            ).strip()
-        text_content = ' '.join(text_content.split())
-        return text_content if text_content else ""
-    except Exception as e:
-        _log.warning(f"Error extracting text from page {page.page_no}: {e}")
-        return ""
-    finally:
-        if hasattr(page, 'image'):
-            del page.image
-        gc.collect()
-
-def process_pdf_chunk(chunk_data: dict[str, any]) -> pd.DataFrame:
-    """Process a single chunk of PDF data."""
-    import gc
-    try:
-        rows = []
-        for page in chunk_data['pages']:
-            row = {
-                "document": chunk_data['document_name'],
-                "hash": chunk_data['document_hash'],
-                "page_hash": create_hash(f"{chunk_data['document_hash']}:{page.page_no}"),
-                "page_number": page.page_no,
-                "content": extract_text_from_page(page),
-            }
-            rows.append(row)
-        return pd.DataFrame(rows)
-    finally:
-        gc.collect()
-
-def process_pdf(input_doc_path: Path) -> Path:
-    """Process a PDF file with memory management."""
-    from docling.datamodel.base_models import InputFormat  
-    from docling.datamodel.pipeline_options import PdfPipelineOptions  
-    from docling.document_converter import DocumentConverter, PdfFormatOption
-    import time  # Lazy import
-    import gc  # Lazy import
-
-    pipeline_options = PdfPipelineOptions(images_scale=IMAGE_RESOLUTION_SCALE)
-    doc_converter = DocumentConverter(
-        format_options={
-            InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
-        }
+# Helper Functions
+def download_from_s3(bucket: str, prefix: str, local_dir: Path):
+    """Download files from S3 to a local directory."""
+    s3_client = boto3.client(
+        "s3",
+        aws_access_key_id=os.getenv("AWS_ACCESS_KEY"),
+        aws_secret_access_key=os.getenv("AWS_SECRET_KEY"),
     )
+    paginator = s3_client.get_paginator("list_objects_v2")
+    for page in paginator.paginate(Bucket=bucket, Prefix=prefix):
+        for obj in page.get("Contents", []):
+            if obj["Key"].endswith(".pdf"):
+                local_path = local_dir / Path(obj["Key"]).name
+                try:
+                    s3_client.download_file(bucket, obj["Key"], str(local_path))
+                    _log.info(f"Downloaded: {local_path}")
+                except Exception as e:
+                    _log.error(f"Error downloading {obj['Key']} from S3: {e}")
+                    raise
 
+def process_pdf(input_pdf_path: Path) -> str:
+    """Process a PDF file and extract content to text."""
     try:
-        start_time = time.time()
-        conv_res = doc_converter.convert(input_doc_path)
-        chunks = []
-        for chunk_start in range(0, len(conv_res.document.pages), CHUNK_SIZE):
-            if not check_memory_usage():
-                _log.warning("Low memory detected, triggering garbage collection")
-                gc.collect()
-            chunk_end = chunk_start + CHUNK_SIZE
-            chunk_data = {
-                'document_name': conv_res.input.file.name,
-                'document_hash': conv_res.input.document_hash,
-                'pages': conv_res.document.pages[chunk_start:chunk_end]
-            }
-            chunk_df = process_pdf_chunk(chunk_data)
-            chunks.append(chunk_df)
-            del chunk_data
-            gc.collect()
-        final_df = pd.concat(chunks, ignore_index=True)
-        output_file = PARQUET_OUTPUT_DIR / f"{input_doc_path.stem}_{int(time.time())}.parquet"
-        final_df.to_parquet(output_file, index=False)
-        return output_file
-    except Exception as e:
-        _log.error(f"Error processing {input_doc_path}: {e}")
-        raise
-    finally:
-        gc.collect()
-
-def generate_and_store_embeddings(txt_file_path: Path) -> None:
-    """Generate and store embeddings."""
-    from sentence_transformers import SentenceTransformer  # Lazy import
-    from pinecone import Pinecone, ServerlessSpec  # Lazy import
-    import hashlib  # Lazy import
-    import gc  # Lazy import
-
-    embedding_model = SentenceTransformer("all-mpnet-base-v2")
-    pc = Pinecone(api_key=PINECONE_API_KEY, environment=PINECONE_ENVIRONMENT)
-    index_name = hashlib.md5(txt_file_path.stem.encode()).hexdigest()[:12]
-    if index_name not in pc.list_indexes():
-        pc.create_index(
-            name=index_name,
-            dimension=768,
-            metric="cosine",
-            spec=ServerlessSpec(cloud="aws", region=PINECONE_ENVIRONMENT)
+        pipeline_options = PdfPipelineOptions()
+        pipeline_options.images_scale = 2.0
+        pipeline_options.generate_page_images = True
+        doc_converter = DocumentConverter(
+            format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)}
         )
-    index = pc.Index(index_name)
-    try:
-        with open(txt_file_path, "r", encoding="utf-8") as file:
-            lines = file.readlines()
-        batch_size = 100
-        for batch_start in range(0, len(lines), batch_size):
-            if not check_memory_usage():
-                _log.warning("Low memory detected, waiting for cleanup")
-                gc.collect()
-                time.sleep(5)
-            batch_end = batch_start + batch_size
-            batch = lines[batch_start:batch_end]
-            embeddings = embedding_model.encode(batch, show_progress_bar=False)
-            vectors = [
-                (f"{txt_file_path.stem}-{i}", 
-                 embedding.tolist(),
-                 {"text": text.strip(), "line_number": i})
-                for i, (embedding, text) in enumerate(zip(embeddings, batch))
-            ]
-            retry_with_backoff(lambda: index.upsert(vectors=vectors))
-            del embeddings, vectors
-            gc.collect()
-            time.sleep(0.5)
-    except Exception as e:
-        _log.error(f"Error generating embeddings for {txt_file_path}: {e}")
-        raise
-    finally:
-        gc.collect()
 
-# DAG definition
+        conv_res = doc_converter.convert(input_pdf_path)
+        text_content = []
+
+        for page in conv_res.document.pages.values():
+            text_content.append(getattr(page, "text", "") or "")
+            if hasattr(page, "image"):
+                text_content.append(pytesseract.image_to_string(page.image.pil_image))
+
+        txt_output_path = TXT_OUTPUT_DIR / f"{input_pdf_path.stem}_output.txt"
+        with open(txt_output_path, "w", encoding="utf-8") as file:
+            file.write("\n".join(text_content))
+
+        _log.info(f"Processed PDF to text: {txt_output_path}")
+        return str(txt_output_path)
+
+    except Exception as e:
+        _log.error(f"Error processing PDF {input_pdf_path}: {e}")
+        raise
+
+def upload_to_s3(file_path: Path, bucket: str, prefix: str):
+    """Upload a local file to an S3 bucket."""
+    try:
+        key = os.path.join(prefix, file_path.name)
+        s3_client.upload_file(str(file_path), bucket, key)
+        _log.info(f"Uploaded {file_path} to s3://{bucket}/{key}")
+    except Exception as e:
+        _log.error(f"Failed to upload {file_path} to S3: {e}")
+        raise
+
+def cleanup_temp_files(directory: Path):
+    """Clean up temporary files in a directory."""
+    for file in directory.glob("*"):
+        try:
+            file.unlink()
+            _log.info(f"Deleted temporary file: {file}")
+        except Exception as e:
+            _log.warning(f"Failed to delete {file}: {e}")
+
+def process_pdfs(**kwargs):
+    """Process PDFs in batches, upload results to S3, and delete temporary files."""
+    pdf_files = list(PDF_INPUT_DIR.glob("*.pdf"))
+    _log.info(f"Found {len(pdf_files)} PDF files to process")
+
+    processed_files = []
+
+    for pdf_path in pdf_files:
+        try:
+            # Simulated PDF processing (extracting text and saving to a file)
+            txt_output_path = process_pdf(pdf_path)
+            
+            # Upload processed text file to S3
+            upload_to_s3(Path(txt_output_path), S3_BUCKET_NAME, S3_OUTPUT_PREFIX)
+            
+            # Push file path to the list
+            processed_files.append(str(txt_output_path))
+            _log.info(f"Processed and uploaded: {pdf_path}, Output: {txt_output_path}")
+
+        except Exception as e:
+            _log.error(f"Error processing {pdf_path}: {e}")
+            raise
+
+    # Push processed file paths to XCom
+    if processed_files:
+        kwargs['task_instance'].xcom_push(key='txt_file_paths', value=processed_files)
+        _log.info(f"Pushed processed file paths to XCom: {processed_files}")
+    else:
+        _log.warning("No files were processed.")
+
+    # Cleanup temporary files
+    cleanup_temp_files(PDF_INPUT_DIR)
+    _log.info("Cleaned up temporary files in PDF_INPUT_DIR.")
+    _log.info("Completed processing PDFs.")
+
+def generate_and_store_embeddings(**kwargs):
+    """Generate embeddings for text files, store them in Pinecone, and clean up temporary files."""
+    try:
+        # Retrieve the text file paths from XCom
+        txt_file_paths = kwargs['task_instance'].xcom_pull(task_ids='process_pdfs', key='txt_file_paths')
+        if not txt_file_paths:
+            raise ValueError("No txt_file_paths found in XCom.")
+
+        _log.info(f"Retrieved txt_file_paths from XCom: {txt_file_paths}")
+
+        def sanitize_index_name(name: str) -> str:
+            """Sanitize index names to meet Pinecone requirements."""
+            import re
+            sanitized_name = re.sub(r'[^a-z0-9-]', '-', name.lower())
+            sanitized_name = re.sub(r'-+', '-', sanitized_name).strip('-')
+            return sanitized_name
+
+        for txt_file_path in txt_file_paths:
+            txt_file_path = Path(txt_file_path)
+            _log.info(f"Generating embeddings for: {txt_file_path}")
+
+            # Sanitize the index name
+            index_name = sanitize_index_name(f"pdf-{txt_file_path.stem}")
+            EMBEDDING_DIM = 768
+
+            # Create Pinecone index if it doesn't exist
+            if index_name not in pc.list_indexes():
+                pc.create_index(
+                    name=index_name,
+                    dimension=EMBEDDING_DIM,
+                    metric="cosine",
+                    spec=ServerlessSpec(cloud="aws", region=PINECONE_ENV)
+                )
+                _log.info(f"Created index: {index_name}")
+
+            # Generate embeddings
+            index = pc.Index(index_name)
+            with open(txt_file_path, "r", encoding="utf-8") as file:
+                lines = file.readlines()
+
+            embeddings = model.encode(lines, show_progress_bar=True)
+            for i, (line, embedding) in enumerate(zip(lines, embeddings)):
+                vector_id = f"{txt_file_path.stem.lower()}-{i}"
+                metadata = {
+                    "line_number": i,
+                    "text": line.strip(),
+                    "file_name": txt_file_path.name,
+                    "file_path": str(txt_file_path),
+                    "timestamp": datetime.now().isoformat(),
+                }
+                index.upsert([(vector_id, embedding.tolist(), metadata)])
+
+            _log.info(f"Embeddings stored for: {txt_file_path}")
+
+        # Cleanup temporary files
+        cleanup_temp_files(TXT_OUTPUT_DIR)
+        _log.info("Cleaned up temporary files in TXT_OUTPUT_DIR.")
+
+    except Exception as e:
+        _log.error(f"Error generating embeddings: {e}")
+        raise
+
+
+# DAG Definition
 default_args = {
     'owner': 'airflow',
-    'depends_on_past': False,
+    'retries': 1,
+    'retry_delay': timedelta(seconds=30),
     'email_on_failure': False,
-    'email_on_retry': False,
-    'retries': 2,  # Retry twice
-    'retry_delay': datetime.timedelta(seconds=30),  
-    'retry_exponential_backoff': True,  
-    'max_retry_delay': datetime.timedelta(minutes=5), 
 }
 
 with DAG(
-    dag_id="optimized_pdf_processing_pipeline",
+    dag_id="process_pdf_and_generate_embeddings",
     default_args=default_args,
-    description="Optimized PDF processing and vector storage pipeline",
+    description="Process PDFs and store embeddings with delays and retries",
     schedule_interval=None,
-    start_date=days_ago(1),
+    start_date=datetime(2024, 1, 1),
     catchup=False,
-    concurrency=3,
-    tags=['pdf', 'processing', 'vectors'],
 ) as dag:
     
-    def download_from_s3():
-        """Download PDF files from S3 with memory management."""
-        s3 = boto3.client("s3")
-        cleanup_old_files(PDF_INPUT_DIR)
-        
-        try:
-            paginator = s3.get_paginator('list_objects_v2')
-            for page in paginator.paginate(Bucket=S3_BUCKET_NAME, Prefix=S3_INPUT_PREFIX):
-                for obj in page.get('Contents', []):
-                    if obj['Key'].endswith('.pdf'):
-                        local_path = PDF_INPUT_DIR / Path(obj['Key']).name
-                        retry_with_backoff(
-                            lambda: s3.download_file(S3_BUCKET_NAME, obj['Key'], str(local_path))
-                        )
-        except Exception as e:
-            _log.error(f"Error downloading files: {e}")
-            raise
-        finally:
-            gc.collect()
-
-    def process_pdfs():
-        """Process PDFs in batches with memory management."""
-        pdf_files = list(PDF_INPUT_DIR.glob("*.pdf"))
-        _log.info(f"Found {len(pdf_files)} PDF files to process")
-        
-        for i in range(0, len(pdf_files), BATCH_SIZE):
-            batch = pdf_files[i:i + BATCH_SIZE]
-            for pdf_path in batch:
-                if check_memory_usage():
-                    try:
-                        process_pdf(pdf_path)
-                    except Exception as e:
-                        _log.error(f"Error processing {pdf_path}: {e}")
-                else:
-                    _log.warning("Low memory, waiting before processing next file")
-                    time.sleep(60)  # Wait for memory to free up
-            
-            gc.collect()
-
-    def store_vectors():
-        """Store vectors with memory management."""
-        txt_files = list(PROCESSED_OUTPUT_DIR.glob("*.txt"))
-        _log.info(f"Found {len(txt_files)} text files to process")
-        
-        for txt_file in txt_files:
-            if check_memory_usage():
-                try:
-                    generate_and_store_embeddings(txt_file)
-                except Exception as e:
-                    _log.error(f"Error processing vectors for {txt_file}: {e}")
-            else:
-                _log.warning("Low memory, waiting before processing next file")
-                time.sleep(60)
-            
-            gc.collect()
-
-    # Task definitions
-    task_download = PythonOperator(
+    download_pdfs_task = PythonOperator(
         task_id="download_pdfs",
-        python_callable=download_from_s3,
-        execution_timeout=datetime.timedelta(minutes=30)
+        python_callable=lambda: download_from_s3(S3_BUCKET_NAME, S3_INPUT_PREFIX, PDF_INPUT_DIR),
+        execution_timeout=timedelta(minutes=10),
     )
 
-    task_process = PythonOperator(
+    process_pdfs_task = PythonOperator(
         task_id="process_pdfs",
         python_callable=process_pdfs,
-        execution_timeout=datetime.timedelta(hours=2)
+        provide_context=True,
+        execution_timeout=timedelta(hours=1),
     )
 
-    task_vectorize = PythonOperator(
-        task_id="store_vectors",
-        python_callable=store_vectors,
-        execution_timeout=datetime.timedelta(hours=2)
+    generate_embeddings_task = PythonOperator(
+        task_id="generate_embeddings",
+        python_callable=generate_and_store_embeddings,
+        provide_context=True,
+        execution_timeout=timedelta(hours=1),
     )
 
-    # Define task dependencies
-    task_download >> task_process >> task_vectorize
+    download_pdfs_task >> process_pdfs_task >> generate_embeddings_task
