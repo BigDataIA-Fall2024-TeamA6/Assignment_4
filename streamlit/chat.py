@@ -5,6 +5,70 @@ from reportlab.pdfgen import canvas
 import io
 from jinja2 import Environment, FileSystemLoader
 
+from reportlab.lib import colors
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus.frames import Frame
+from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate
+from datetime import datetime
+
+def generate_pdf(chat_history):
+    pdf_buffer = io.BytesIO()
+    doc = BaseDocTemplate(pdf_buffer, pagesize=letter)
+    
+    # Create frames for header and content
+    frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height - 1.5*inch, id='normal')
+    template = PageTemplate(id='test', frames=frame, onPage=add_page_number)
+    doc.addPageTemplates([template])
+    
+    # Styles
+    styles = getSampleStyleSheet()
+    styles.add(ParagraphStyle(name='ChatUser', fontSize=10, textColor=colors.blue, spaceAfter=6))
+    styles.add(ParagraphStyle(name='ChatAI', fontSize=10, textColor=colors.green, spaceAfter=6))
+    styles.add(ParagraphStyle(name='Header', fontSize=14, alignment=1, spaceAfter=12))
+    
+    # Content
+    story = []
+    story.append(Paragraph("Chat History", styles['Header']))
+    story.append(Spacer(1, 12))
+    
+    for i, entry in enumerate(chat_history):
+        role = entry["role"].capitalize()
+        content = entry["content"]
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Add alternating background color
+        bg_color = colors.lightgrey if i % 2 == 0 else colors.white
+        
+        # Create a paragraph with background color
+        if role == "Assistant" and isinstance(content, dict) and "formatted_output" in content:
+            formatted_output = content["formatted_output"]
+            p = Paragraph(
+                f"<font color='green'><b>{role}</b></font> ({timestamp}):<br/>{formatted_output}",
+                styles['ChatAI']
+            )
+        else:
+            p = Paragraph(
+                f"<font color={'blue' if role == 'User' else 'green'}><b>{role}</b></font> ({timestamp}):<br/>{content}",
+                styles['ChatUser' if role == 'User' else 'ChatAI']
+            )
+        story.append(p)
+        story.append(Spacer(1, 6))
+    
+    doc.build(story)
+    pdf_buffer.seek(0)
+    return pdf_buffer
+
+def add_page_number(canvas, doc):
+    canvas.saveState()
+    canvas.setFont('Helvetica', 9)
+    page_num = canvas.getPageNumber()
+    text = f"Page {page_num}"
+    canvas.drawRightString(doc.pagesize[0] - 0.5*inch, 0.5*inch, text)
+    canvas.restoreState()
+
 def get_ai_response(question):
     ai_agent = get_graph()
     output = ai_agent.invoke({
@@ -75,32 +139,32 @@ def initialize_session_state():
     if 'formatted_output' not in st.session_state:
         st.session_state.formatted_output = None
 
-def generate_pdf(chat_history):
-    # Create a BytesIO buffer to hold PDF data
-    pdf_buffer = io.BytesIO()
-    pdf = canvas.Canvas(pdf_buffer, pagesize=letter)
+# def generate_pdf(chat_history):
+#     # Create a BytesIO buffer to hold PDF data
+#     pdf_buffer = io.BytesIO()
+#     pdf = canvas.Canvas(pdf_buffer, pagesize=letter)
     
-    # Set the PDF title
-    pdf.setTitle("Chat History")
+#     # Set the PDF title
+#     pdf.setTitle("Chat History")
 
-    # Define text properties
-    width, height = letter
-    text = pdf.beginText(40, height - 40)
-    text.setFont("Helvetica", 10)
+#     # Define text properties
+#     width, height = letter
+#     text = pdf.beginText(40, height - 40)
+#     text.setFont("Helvetica", 10)
 
-    # Add chat history to PDF content
-    for entry in chat_history:
-        role = entry["role"].capitalize()
-        content = entry["content"]
-        text.textLine(f"{role}: {content}")
-        text.textLine("")  # Empty line for separation
+#     # Add chat history to PDF content
+#     for entry in chat_history:
+#         role = entry["role"].capitalize()
+#         content = entry["content"]
+#         text.textLine(f"{role}: {content}")
+#         text.textLine("")  # Empty line for separation
 
-    # Finalize and save the PDF content
-    pdf.drawText(text)
-    pdf.showPage()
-    pdf.save()
-    pdf_buffer.seek(0)
-    return pdf_buffer
+#     # Finalize and save the PDF content
+#     pdf.drawText(text)
+#     pdf.showPage()
+#     pdf.save()
+#     pdf_buffer.seek(0)
+#     return pdf_buffer
  
 def main():
     st.title("AI Chat Assistant")
@@ -168,7 +232,7 @@ def main():
 
 {last_step["sources"]}
 
-**TOOL USED:** {first_tool}
+**TOOL USED:** {tools_used}
                 """
                 st.session_state.formatted_output = formatted_output
                 print(formatted_output)
@@ -176,7 +240,17 @@ def main():
                 st.markdown(main_body)
        
         # Add assistant response to chat history
-        st.session_state.messages.append({"role": "assistant", "content": response})
+        st.session_state.messages.append({
+            "role": "assistant", 
+            "content": {
+                "introduction": response.get("introduction", ""),
+                "research_steps": response.get("research_steps", ""),
+                "main_body": response.get("main_body", ""),
+                "conclusion": response.get("conclusion", ""),
+                "sources": response.get("sources", ""),
+                "intermediate_steps": response.get("intermediate_steps", [])
+            }
+        })
  
     # Sidebar with chat controls
     with st.sidebar:
