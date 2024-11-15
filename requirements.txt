@@ -240,7 +240,6 @@ python-magic==0.4.27
 python-multipart==0.0.12
 python-oxmsg==0.0.1
 python-pptx==1.0.2
-pytz==2024.2
 pywin32==306
 pywin32-ctypes==0.2.3
 PyYAML==6.0.2
