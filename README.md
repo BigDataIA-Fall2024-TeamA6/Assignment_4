@@ -10,7 +10,7 @@
 ### **Project Resources**:
 ---
 a. **Diagrams**: [Architecture Diagram](https://github.com/BigDataIA-Fall2024-TeamA6/Assignment_4/tree/main/architecture_diagram)  
-b. **Fully Documented Code Labs**: [Codelabs Preview](https://codelabs-preview.appspot.com/?file_id=1mjvrVPW4HhfXsRnsTeXvmz30b2qKbRQ2dVz1ydNykV4/)  
+b. **Fully Documented Code Labs**: [Codelabs Preview](https://codelabs-preview.appspot.com/?file_id=1nxG6yaI3yDjiQZIPSdsig2Jwk55nCH0C4LKvD3lSe8s#0)  
 c. **Video of the Submission**: [Solution Video](https://northeastern.zoom.us/rec/share/r0MEH4EqWnbwIpAGH5udZcRMk_HdL4oX0V1C3T267zfe2rMcWxzC7HYy0PB1ryx1.edGMDYD8TQrekura)  
 d. **GitHub Project**: [GitHub Repository](https://github.com/BigDataIA-Fall2024-TeamA6/Assignment_4)  
 e. **Deployed Project URL**: [https://team6a4.streamlit.app/](https://team6a4.streamlit.app/)
