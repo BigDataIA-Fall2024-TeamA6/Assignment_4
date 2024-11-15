@@ -1,0 +1,155 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+
+  redis:
+    image: redis:7.2
+    expose:
+      - 6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 60s
+    restart: always
+
+  airflow-init:
+    image: apache/airflow:2.10.2
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        if [[ -z "${AIRFLOW_UID}" ]]; then
+          echo -e "\033[1;33mWARNING!!!: AIRFLOW_UID not set!\e[0m"
+        fi
+        mkdir -p /sources/logs /sources/dags /sources/plugins
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        exec /entrypoint airflow db upgrade && \
+        airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+      AIRFLOW__CELERY__WORKER_CONCURRENCY: 2
+      AIRFLOW__CELERY__WORKER_PREFETCH_MULTIPLIER: 1
+      #AIRFLOW__CELERY__WORKER_AUTOSCALE: ""
+      _PIP_ADDITIONAL_REQUIREMENTS: "docling pinecone-client sentence-transformers pytesseract memory-profiler psutil"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins    
+    user: "${AIRFLOW_UID}"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: on-failure
+
+  airflow-webserver:
+    image: apache/airflow:2.10.2
+    environment:
+      - AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      - AIRFLOW__CORE__EXECUTOR=CeleryExecutor
+      - AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/0
+      - AIRFLOW__CELERY__RESULT_BACKEND=db+postgresql://airflow:airflow@postgres:5432/airflow
+      - _PIP_ADDITIONAL_REQUIREMENTS=docling pinecone-client sentence-transformers pytesseract memory-profiler psutil
+      - AIRFLOW__CORE__HOSTNAME_CALLABLE=socket.gethostname
+      - AIRFLOW__WEBSERVER__SECRET_KEY=-30GNeJ56ZgIqhyri2EN6r4_Y7Qk0Myv_ZyBcG-IeRE
+      - AIRFLOW__CELERY__WORKER_CONCURRENCY=2
+      - AIRFLOW__CELERY__WORKER_PREFETCH_MULTIPLIER=1
+     # - AIRFLOW__CELERY__WORKER_AUTOSCALE=""
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/logs:/opt/airflow/logs
+      - ~/.aws:/root/.aws:ro
+      - ./Assignment_4:/opt/airflow/Assignment_4
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+      - airflow-init
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    command: airflow webserver
+    restart: always
+    ports:
+      - "8080:8080"
+
+  airflow-scheduler:
+    image: apache/airflow:2.10.2
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      - _PIP_ADDITIONAL_REQUIREMENTS=docling pinecone-client sentence-transformers pytesseract memory-profiler psutil
+      - AIRFLOW__CORE__HOSTNAME_CALLABLE=socket.gethostname
+      - AIRFLOW__WEBSERVER__SECRET_KEY=-30GNeJ56ZgIqhyri2EN6r4_Y7Qk0Myv_ZyBcG-IeRE
+      - AIRFLOW__CELERY__WORKER_CONCURRENCY=2
+      - AIRFLOW__CELERY__WORKER_PREFETCH_MULTIPLIER=1
+    #  - AIRFLOW__CELERY__WORKER_AUTOSCALE=""
+      - AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/0
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ~/.aws:/root/.aws:ro
+      - ./Assignment_4:/opt/airflow/Assignment_4
+    env_file:
+      - .env
+    command: airflow scheduler
+    restart: always
+    depends_on:
+      - airflow-webserver
+
+  airflow-worker:
+    image: apache/airflow:2.10.2
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      - AIRFLOW__CORE__EXECUTOR=CeleryExecutor
+      - AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/0
+      - AIRFLOW__CELERY__RESULT_BACKEND=db+postgresql://airflow:airflow@postgres:5432/airflow
+      - _PIP_ADDITIONAL_REQUIREMENTS=docling pinecone-client sentence-transformers pytesseract memory-profiler psutil
+      - AIRFLOW__CORE__HOSTNAME_CALLABLE=socket.gethostname
+      - AIRFLOW__WEBSERVER__SECRET_KEY=-30GNeJ56ZgIqhyri2EN6r4_Y7Qk0Myv_ZyBcG-IeRE
+      - AIRFLOW__CELERY__WORKER_CONCURRENCY=2
+      - AIRFLOW__CELERY__WORKER_PREFETCH_MULTIPLIER=1
+    #  - AIRFLOW__CELERY__WORKER_AUTOSCALE=""
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ~/.aws:/root/.aws:ro
+      - ./Assignment_4:/opt/airflow/Assignment_4
+    env_file:
+      - .env
+    command: airflow celery worker
+    restart: always
+    depends_on:
+      - airflow-scheduler
+    deploy:
+      resources:
+        limits:
+          memory: 8g
+          cpus: "2.0"
+
+volumes:
+  postgres_data:
