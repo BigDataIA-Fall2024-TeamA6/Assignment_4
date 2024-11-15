@@ -255,29 +255,55 @@ def main():
     # Sidebar with chat controls
     with st.sidebar:
         st.title("Chat Controls")
+        
         if st.button("Clear Chat History"):
             st.session_state.messages = []
             st.rerun()
         
-        if st.button("Create HTML"):
-            response = get_ai_response(prompt)
-            html_content = build_html_report(response)
-            st.download_button(
-                label="Download HTML",
-                data=html_content,
-                file_name="chat_report.html",
-                mime="text/html"
-            )
-
-        # Download PDF button
-        if st.button("Create PDF"):
-            pdf_buffer = generate_pdf(st.session_state.messages)
-            st.download_button(
-                label="Download PDF",
-                data=pdf_buffer,
-                file_name="chat_history.pdf",
-                mime="application/pdf"
-            )
+        # Add custom CSS for full-width buttons and red download buttons
+        st.markdown(
+            """
+            <style>
+            .stButton>button {
+                width: 100%;  /* Make buttons take full width */
+            }
+            .stDownloadButton>button {
+                width: 100%;        /* Make download buttons take full width */
+                background-color: red; /* Set red background */
+                color: white;       /* Set text color to white for better contrast */
+                border: none;       /* Remove border */
+                border-radius: 5px; /* Optional: Add rounded corners */
+                padding: 10px;      /* Optional: Add padding for a larger button */
+            }
+            .stDownloadButton>button:hover {
+                background-color: darkred; /* Change background on hover */
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+        
+        left, right = st.columns(2)
+        with left:
+            if st.button("Create HTML"):
+                response = get_ai_response(prompt)
+                html_content = build_html_report(response)
+                st.download_button(
+                    label="Download HTML",
+                    data=html_content,
+                    file_name="chat_report.html",
+                    mime="text/html"
+                )
+        with right:
+            # Download PDF button
+            if st.button("Create PDF"):
+                pdf_buffer = generate_pdf(st.session_state.messages)
+                st.download_button(
+                    label="Download PDF",
+                    data=pdf_buffer,
+                    file_name="chat_history.pdf",
+                    mime="application/pdf"
+                )
 
         st.markdown("---")
         st.markdown("### Current Response Details")
