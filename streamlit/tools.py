@@ -1,9 +1,9 @@
 from langchain_core.tools import tool
-from semantic_router.encoders import OpenAIEncoder
 from serpapi import GoogleSearch
 from pinecone import Pinecone,ServerlessSpec
-from tavily import TavilyClient
 from langchain_core.agents import AgentAction
+from sentence_transformers import SentenceTransformer
+
 import requests
 import time
 import os
@@ -13,7 +13,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
-tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 pc_api_key = os.getenv("PINECONE_API_KEY")
 pc = Pinecone(api_key = pc_api_key)
@@ -57,19 +56,16 @@ def web_search(query: str):
 
 def format_rag_contexts(matches: list):
     contexts = []
-    for x in matches:
-        text = (
-            f"Title: {x['metadata']['title']}\n"
-            f"Content: {x['metadata']['content']}\n"
-            f"ArXiv ID: {x['metadata']['arxiv_id']}\n"
-            f"Related Papers: {x['metadata']['references']}\n"
-        )
+    for match in matches:
+        metadata = match.metadata if hasattr(match, 'metadata') else {}
+        if metadata:
+            text = metadata.get('text', '')
         contexts.append(text)
     context_str = "\n---\n".join(contexts)
     return context_str
 
 def build_knowledge_base():
-    index_name = "" # insert PDF document name here
+    index_name = "pdf-364ff30954" # insert PDF document name here
 
     # check if index already exists (it shouldn't if this is first time)
     if index_name not in pc.list_indexes().names():
@@ -92,23 +88,33 @@ def build_knowledge_base():
 @tool("rag_search")
 def rag_search(query: str):
     """Finds specialist information on AI using a natural language query."""
-    encoder = OpenAIEncoder(name="text-embedding-ada-002")
+    encoder = SentenceTransformer("all-mpnet-base-v2")    
     index = build_knowledge_base()
-    xq = encoder([query])
-    xc = index.query(vector=xq, top_k=2, include_metadata=True)
-    context_str = format_rag_contexts(xc["matches"])
+    query_em = encoder.encode(query).tolist()
+    results = index.query(vector=query_em, top_k=2, include_metadata=True)
+    context_str = format_rag_contexts(results.matches)
     return context_str
 
 @tool("rag_search_filter")
 def rag_search_filter(query: str, arxiv_id: str):
     """Finds information from our ArXiv database using a natural language query
     and a specific ArXiv ID. Allows us to learn more details about a specific paper."""
-    encoder = OpenAIEncoder(name="text-embedding-ada-002")
+    encoder = SentenceTransformer("all-mpnet-base-v2")    
     index = build_knowledge_base()
-    xq = encoder([query])
-    xc = index.query(vector=xq, top_k=6, include_metadata=True, filter={"arxiv_id": arxiv_id})
-    context_str = format_rag_contexts(xc["matches"])
+    query_embedding = encoder.encode(query)
+    vector = query_embedding.tolist()
+    results = index.query(
+        vector=vector,
+        top_k=6,
+        # include_metadata=True,
+        filter={
+            "arxiv_id": {"$eq": arxiv_id}  # Using proper Pinecone filter syntax
+        }
+    )    
+    # Format and return results
+    context_str = format_rag_contexts(results.matches)
     return context_str
+
 
 # rag_search.__repr_name__
 
@@ -144,7 +150,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 system_prompt = """You are the oracle, the great AI decision maker.
 Given the user's query you must decide what to do with it based on the
-list of tools provided to you.
+list of tools provided to you. If you implement rag_search do not go into recurssion.
 
 If you see that a tool has been used (in the scratchpad) with a particular
 query, do NOT use that same tool with the same query again. Also, do NOT use
@@ -244,9 +250,3 @@ def run_tool(state: list):
         log=str(out)
     )
     return {"intermediate_steps": [action_out]}
-
-
-
-
-
-
