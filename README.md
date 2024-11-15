@@ -73,7 +73,7 @@ Assignment_4/
 
 ## **Architecture Diagram**
 
-![Architecture Diagram](https://github.com/BigDataIA-Fall2024-TeamA6/Assignment_4/blob/main/architecture_diagram/doc_processing_pipeline.png)
+![Architecture Diagram](https://github.com/BigDataIA-Fall2024-TeamA6/Assignment_4/blob/main/architecture_diagram/end-to-end_research_tool_with_multi-agent_system_&_document_vectorization.png)
 
 ---
 
