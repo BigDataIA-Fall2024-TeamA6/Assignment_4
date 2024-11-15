@@ -138,36 +138,34 @@ def initialize_session_state():
         st.session_state.messages = []
     if 'formatted_output' not in st.session_state:
         st.session_state.formatted_output = None
-
-# def generate_pdf(chat_history):
-#     # Create a BytesIO buffer to hold PDF data
-#     pdf_buffer = io.BytesIO()
-#     pdf = canvas.Canvas(pdf_buffer, pagesize=letter)
-    
-#     # Set the PDF title
-#     pdf.setTitle("Chat History")
-
-#     # Define text properties
-#     width, height = letter
-#     text = pdf.beginText(40, height - 40)
-#     text.setFont("Helvetica", 10)
-
-#     # Add chat history to PDF content
-#     for entry in chat_history:
-#         role = entry["role"].capitalize()
-#         content = entry["content"]
-#         text.textLine(f"{role}: {content}")
-#         text.textLine("")  # Empty line for separation
-
-#     # Finalize and save the PDF content
-#     pdf.drawText(text)
-#     pdf.showPage()
-#     pdf.save()
-#     pdf_buffer.seek(0)
-#     return pdf_buffer
+        
+def save_to_markdown(user_prompt,formatted_output):
+    try:
+        cleaned_output = "\n".join(line.strip() 
+            for line in formatted_output.split("\n")).strip()
+        markdown_content = \
+        f""" author: Team6 \n \
+        summary: AI Agent report \n \
+        id: codelab-id-new \n \
+        categories: codelab,markdown \n \
+        environments: Web \n \
+        status: Published \n \
+        # Codelabs Report\n \
+        ## Prompt \n \
+        {user_prompt}\n \
+        ## Response \n  \ 
+        {cleaned_output}\n \ """
+        # Write to markdown file
+        with open("output.md", 'w', encoding='utf-8') as md_file:
+            md_file.write(markdown_content)       
+        with open("output.md", 'r', encoding='utf-8') as md_file:
+                return md_file,md_file.read()
+        
+    except Exception as e:
+        print(f"Error occurred while saving markdown file: {str(e)}")
  
 def main():
-    st.title("AI Chat Assistant")
+    st.title("Multi-Agent Research Assistant")
    
     # Initialize session state
     initialize_session_state()
@@ -285,14 +283,13 @@ def main():
         
         left, right = st.columns(2)
         with left:
-            if st.button("Create HTML"):
-                response = get_ai_response(prompt)
-                html_content = build_html_report(response)
+            if st.button("Create Codelabs"):
+                md_file,md_buffer = save_to_markdown(prompt,st.session_state.formatted_output)
                 st.download_button(
-                    label="Download HTML",
-                    data=html_content,
-                    file_name="chat_report.html",
-                    mime="text/html"
+                    label="Download MD file",
+                    data=md_buffer,
+                    file_name="output.md",
+                    mime="text/markdown"
                 )
         with right:
             # Download PDF button
@@ -317,7 +314,7 @@ def main():
 if __name__ == "__main__":
     # Set page configuration
     st.set_page_config(
-        page_title="AI Chat Assistant",
+        page_title="Multi-Agent Research Assistant",
         page_icon="💬",
         layout="wide"
     )
