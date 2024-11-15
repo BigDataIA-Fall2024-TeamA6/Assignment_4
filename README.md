@@ -6,8 +6,7 @@
 - Sahiti Nallamolu
 - Vishodhan Krishnan
 - Vismay Devjee
-- Vismay Devjee
-
+  
 ### **Project Resources**:
 ---
 a. **Diagrams**: [Architecture Diagram](https://github.com/BigDataIA-Fall2024-TeamA6/Assignment_4/architecture_diagram/)  
