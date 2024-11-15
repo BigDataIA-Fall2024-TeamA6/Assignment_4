@@ -159,9 +159,9 @@ def main():
 {last_step["research_steps"]}
 
 
-**REPORT** 
+**CONCLUSION** 
 
-{last_step["main_body"]}
+{last_step["conclusion"]}
 
 
 **SOURCES**
@@ -212,6 +212,7 @@ def main():
         
         st.markdown("---")
         st.markdown("### Chat History")
+        st.write(st.session_state.messages)
 
 if __name__ == "__main__":
     # Set page configuration
