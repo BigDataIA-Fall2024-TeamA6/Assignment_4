@@ -41,7 +41,7 @@ The application allows users to:
 - **Generate Reports**: Export research results in both PDF and Codelabs formats for instructional clarity.
 
 ## **File Structure**
-
+```
 Assignment_4/
   ├── airflow/
   │   ├── dags/
@@ -49,17 +49,15 @@ Assignment_4/
   │   └── docker-compose.yaml   # Airflow deployment configuration
   ├── architecture_diagram/
   │   ├── arch_diagram.py
-  ├── streamlit/
-  │   ├── chat.py                # Main Streamlit application
-  │   ├── researchagent.py
-  │   ├── state.py
-  │   ├── tools.py
+  │   ├── research_agent.py      # Research agent logic with Pinecone indexing and tool routing
+  │   ├── state.py               # Defines the state management for the agent
+  │   ├── tools.py               # Implements various tools for task execution
   ├── utils/
   │   ├── document_processors.py   # Document processing utilities
   ├── .env                     # load API keys
   ├── requirements.txt               # installation dependencies file
   └── README.md 
-
+```
 ## **How It Works**
 
 1. **Document Parsing and Vectorization**: 
