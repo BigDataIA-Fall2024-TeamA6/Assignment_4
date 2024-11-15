@@ -1,9 +1,8 @@
 import os
 import time
-from semantic_router.encoders import OpenAIEncoder
+from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
-from pinecone import Pinecone
-from pinecone import ServerlessSpec
+from pinecone import Pinecone, ServerlessSpec
 from tools import run_oracle,run_tool,tools
 from state import AgentState
 
@@ -12,7 +11,7 @@ load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 api_key = os.getenv("PINECONE_API_KEY") 
 
-encoder = OpenAIEncoder(name="text-embedding-ada-002")
+encoder = SentenceTransformer("all-mpnet-base-v2")
 pc = Pinecone(api_key=api_key)
 spec = ServerlessSpec(
     cloud="aws", region="us-east-1")
@@ -34,20 +33,51 @@ def get_index(index_name):
         return new_index
     else:
         index = pc.Index(index_name)
-        print("Index fetch success")
         return index
 
 index = get_index(pdf_index_name)
 
 
-def router(state: list):
-    # return the tool name to use
-    if isinstance(state["intermediate_steps"], list):
-        return state["intermediate_steps"][-1].tool
-    else:
-        # if we output bad format go to final answer
-        print("Router invalid format")
+# def router(state: list):
+#     # return the tool name to use
+#     if isinstance(state["intermediate_steps"], list):
+#         return state["intermediate_steps"][-1].tool
+#     else:
+#         # if we output bad format go to final answer
+#         print("Router invalid format")
+#         return "final_answer"
+
+def router(state: dict):
+    max_depth = 25  # Adjust as needed to match the recursion limit
+    depth = state.get("depth", 0)
+
+    # Increment depth
+    state["depth"] = depth + 1
+    print(f"Router Depth: {depth}, Intermediate steps: {state.get('intermediate_steps', [])}")
+
+    # Stop if max depth is reached
+    if depth >= max_depth:
+        print("Max depth reached. Routing to 'final_answer'")
         return "final_answer"
+
+    # Prevent revisiting the same tool repeatedly
+    if "visited_tools" not in state:
+        state["visited_tools"] = set()
+
+    # Get the last tool invoked
+    if isinstance(state["intermediate_steps"], list) and state["intermediate_steps"]:
+        last_tool = state["intermediate_steps"][-1].tool
+
+        if last_tool in state["visited_tools"]:
+            print(f"Tool '{last_tool}' already visited. Routing to 'final_answer'")
+            return "final_answer"
+        
+        state["visited_tools"].add(last_tool)
+        return last_tool
+
+    # Fallback to final answer in case of invalid format
+    print("Router encountered invalid format. Routing to 'final_answer'")
+    return "final_answer"
 
 
 from langgraph.graph import StateGraph, END
@@ -83,71 +113,3 @@ def get_graph():
 
 
 runnable = get_graph()
-
-"""## Building Reports
-
-Let's test our research agent. First, I want to try on something simple (although not within the intended use-case of our agent):
-"""
-
-# out = runnable.invoke({
-#     "input": "tell me something interesting about dogs",
-#     "chat_history": [],
-# })
-
-"""Let's create a function to consume the agent output and format it into our report:"""
-
-
-# def build_report(output: dict):
-#     research_steps = output["research_steps"]
-#     if type(research_steps) is list:
-#         research_steps = "\n".join([f"- {r}" for r in research_steps])
-#     sources = output["sources"]
-#     if type(sources) is list:
-#         sources = "\n".join([f"- {s}" for s in sources])
-#     return f"""
-# INTRODUCTION
-# ------------
-# {output["introduction"]}
-
-# RESEARCH STEPS
-# --------------
-# {research_steps}
-
-# REPORT
-# ------
-# {output["main_body"]}
-
-# CONCLUSION
-# ----------
-# {output["conclusion"]}
-
-# SOURCES
-# -------
-# {sources}
-# """
-
-# print(build_report(
-#     output=out["intermediate_steps"][-1].tool_input
-# ))
-
-# """Now let's try with an on-topic question on AI."""
-
-# out = runnable.invoke({
-#     "input": "tell me about AI",
-#     "chat_history": []
-# })
-
-# print(build_report(
-#     output=out["intermediate_steps"][-1].tool_input
-# ))
-
-# """Let's ask about RAG specifically."""
-
-# out = runnable.invoke({
-#     "input": "what is retrieval augmented generation?",
-#     "chat_history": []
-# })
-
-# print(build_report(
-#     output=out["intermediate_steps"][-1].tool_input
-# ))
